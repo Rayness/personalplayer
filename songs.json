@@ -1,21 +1,21 @@
 [
     {
         "id" : 1,
-        "cover" : "https://i.ppy.sh/c2a6d3a024e7269949a2ca95235d6c80df66dccd/68747470733a2f2f7777772e726f6164746f76722e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031392f30332f72696f742d6f7665726b696c6c2d617274776f726b2d312e6a7067",
+        "cover" : "https://repository-images.githubusercontent.com/415407744/50faf33c-1ed7-4b37-be52-bde9decae2c9",
         "artist" : "RIOT",
         "name" : "Overkill",
         "link" : "/media/RIOT - Overkill.mp3"
     },
     {
         "id" : 2,
-        "cover" : "https://i.ppy.sh/c2a6d3a024e7269949a2ca95235d6c80df66dccd/68747470733a2f2f7777772e726f6164746f76722e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031392f30332f72696f742d6f7665726b696c6c2d617274776f726b2d312e6a7067",
+        "cover" : "https://avatars.mds.yandex.net/i?id=1860210a460d55628ad54c38cb0115b8_l-9783932-images-thumbs&n=13",
         "artist" : "Ado",
         "name" : "Show",
         "link" : "/media/Ado - Show.mp3"
     },
     {
         "id" : 3,
-        "cover" : "https://i.ppy.sh/c2a6d3a024e7269949a2ca95235d6c80df66dccd/68747470733a2f2f7777772e726f6164746f76722e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031392f30332f72696f742d6f7665726b696c6c2d617274776f726b2d312e6a7067",
+        "cover" : "https://images.genius.com/8daaaa0c73899597c9ff7e0e66b84f13.1000x1000x1.png",
         "artist" : "Ado",
         "name" : "Usseewa",
         "link" : "/media/Ado - Usseewa.mp3"

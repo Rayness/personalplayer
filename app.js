@@ -21,11 +21,11 @@ const renderSongs = (songs) => {
     songsWrapper.innerHTML = songs.map(song => {
         return `<div class="song js-music-btn">
                     <div class="song_image">
-                        <img src="${song.Cover}" alt="Постер музыкальной композиции">
+                        <img src="${song.cover}" alt="Постер музыкальной композиции">
                     </div>
                     <div id="song_info3">
-                        <h3 id="song_name3">${song.Name}</h3>
-                        <h4 id="song_author">${song.Artist}</h4>
+                        <h3 id="song_name3">${song.name}</h3>
+                        <h4 id="song_author">${song.artist}</h4>
                     </div>
                 </div>`;
     }).join("");
