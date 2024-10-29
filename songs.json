@@ -1,12 +1,12 @@
 {
     "songs" : [
         {
-            "Artis" : "RIOT",
-            "Name" : "Overkill"
+            "artist" : "RIOT",
+            "name" : "Overkill"
         },
         {
-            "Artis" : "",
-            "Name" : ""
+            "artist" : "Song Artist",
+            "name" : "Song Name"
         }
     ]
 }
