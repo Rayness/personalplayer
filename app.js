@@ -35,5 +35,4 @@ document.addEventListener('DOMContentLoaded', () => {
     getSongs();
 });
 
-
-let musicBtn = document.querySelector('.js-music-btn');
+document.addEventListener('keydown', (e) => console.log(`Нажата клавиша: ${e.key}`));
