@@ -19,10 +19,13 @@
                 console.error(error)
             }
         }
+
         const renderSongs = (songs) => {
+            console.log(songs);
+            
             const songsWrapper = document.querySelector(".songsWrapper");
             songsWrapper.innerHTML = songs.map(song => {
-                return '<div class="song"><div class="song_image"><img src="'+song.cover+'" alt="Постер музыкальной композиции"></div><div id="song_info3"><h3 id="song_name3"> Название </h3><h4 id="song_author"> Автор </h4></div></div>';
+                return '<div class="song"><div class="song_image"><img src="'+song.Cover+'" alt="Постер музыкальной композиции"></div><div id="song_info3"><h3 id="song_name3">'+song.Name+'</h3><h4 id="song_author">'+song.Artist+'</h4></div></div>';
             }).join("");
         }
             
@@ -49,7 +52,10 @@
      
     <!-- Начало страницы -->
     <main id="main">
-        <div class="songsWrapper"></div>
+        <div class="songsWrapper">
+
+
+        </div>
         <script>
             
         </script>
