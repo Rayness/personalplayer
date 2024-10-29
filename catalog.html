@@ -11,15 +11,15 @@
     <script>
 
         let songs = []
-        const sendRequest = async () => {
-            const lat = await fetch("http://localhost:7999/songs.json")
-            const data = await lat.json()
-            console.log(data);
-            songs = JSON.stringify(data);
+            const sendRequest = async () => {
+                const lat = await fetch("http://localhost:7999/songs.json")
+                const data = await lat.json()
+                console.log(data);
+                songs = JSON.stringify(data);
 
-            localStorage.setItem("songs", data)
+                localStorage.setItem("songs", data)
 
-            return data
+                return data
 
             
         // делаем что то с response 
