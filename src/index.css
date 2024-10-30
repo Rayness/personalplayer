@@ -1,0 +1,22 @@
+html, body{
+	margin: 0;  
+    padding: auto;
+}
+
+.header {
+    display: flex;
+    padding: 0 12px 12px 12px;
+    background-color: #800000;
+    margin: auto;
+    height: 100px;
+    width: 50%;
+}
+
+.site_name {
+    color: #F2E8C6;
+}
+
+.menu a {
+    color: #F2E8C6;
+    text-decoration: none;
+}
