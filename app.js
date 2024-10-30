@@ -14,25 +14,43 @@ const getSongs = async () => {
     }
 }
 
-
 const renderSongs = (songs) => {
     console.log(songs);
 
     const songsWrapper = document.querySelector(".songsWrapper");
     songsWrapper.innerHTML = songs.map(song => {
-        return `<div class="song js-music-btn">
+        return `<div class="song js-music-btn" id="${song.id}">
                     <div class="song_image">
-                        <img src="${song.cover}" alt="Постер музыкальной композиции">
+                        <img id="image-${song.id}" src="${song.cover}" alt="Постер музыкальной композиции">
                     </div>
-                    <div id="song_info3">
-                        <h3 id="song_name3">${song.name}</h3>
-                        <h4 id="song_author">${song.artist}</h4>
+                    <div id="song_info-${song.id}">
+                        <h3 id="song_name-${song.id}">${song.name}</h3>
+                        <h4 id="song_author-${song.id}">${song.artist}</h4>
                     </div>
                 </div>
                 `;
     }).join("");
 }
 
+const renderPlayer = (songs) => {
+    var myAudio = new Audio();
+
+    const song = document.querySelector('#song-3');
+
+    var fffff = document.onclick = function(e) {
+            console.log(e.target.id);
+            return e.target.div
+          };
+
+    console.log(song, fffff);
+    
+        
+    
+    myAudio.src = songs[0].link
+    
+    console.log('Файл музыки', myAudio);
+    
+    }
 
 document.addEventListener('DOMContentLoaded', () => {
     getSongs();

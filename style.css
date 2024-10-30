@@ -49,10 +49,12 @@ html, body{
 }
 
 .player {
+    margin-left: 24%;
     border-radius: 4px;
     position: absolute;
     bottom: 0;
     display: flex;
+    box-sizing: border-box;
     flex-direction: row;
     padding-right: 10px;
     background-color: #800000;
@@ -69,8 +71,11 @@ html, body{
 }
 
 .player__info_text {
-    margin: 0;
-    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing:content-box;
+    margin-bottom: -200px;
+    padding-bottom: 0;
 
 }
 
@@ -82,4 +87,27 @@ html, body{
     color: #F2E8C6;
     position: relative;
     padding-bottom: -10px;
+}
+
+.player__control {
+    display: flex;
+    flex-direction: row;
+    position: relative; 
+    top: 40%;
+    margin-left: 25%;
+}
+
+.player__control__duration {
+    display: flex;
+    flex-direction: row;
+}
+
+.player__control__volume {
+    display: flex;
+    position: absolute;
+    right: 0;
+}
+
+.player__control__play {
+    background-color: url('/icons/play.png');
 }
