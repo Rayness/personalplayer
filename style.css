@@ -47,3 +47,39 @@ html, body{
     width: 100%;
     border-radius: 10px;
 }
+
+.player {
+    border-radius: 4px;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    padding-right: 10px;
+    background-color: #800000;
+    height: 100px;
+    width: 55%;
+}
+
+
+
+.player__cover_img {
+    border-radius: 4px;
+    height: 100px;
+    width: 100px;
+}
+
+.player__info_text {
+    margin: 0;
+    padding: 0;
+
+}
+
+.player__info {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: left;
+    text-align: left;
+    color: #F2E8C6;
+    position: relative;
+    padding-bottom: -10px;
+}
