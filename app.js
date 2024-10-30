@@ -38,8 +38,8 @@ const renderPlayer = (songs) => {
     const song = document.querySelector('#song-3');
 
     var fffff = document.onclick = function(e) {
-            console.log(e.target.id);
-            return e.target.div
+            console.log(e.target);
+            return e.target
           };
 
     console.log(song, fffff);
