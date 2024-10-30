@@ -11,7 +11,6 @@ export const Home = () => {
 					content="width=device-width, initial-scale=1.0"
 				/>
 				<title>Заголовок страницы</title>
-				<link rel="stylesheet" type="text/css" href="style.css" />
 			</head>
 			<header className="header">
 				<div className="site_name">

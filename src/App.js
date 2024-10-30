@@ -1,5 +1,5 @@
 import React from 'react';
-import './index.css';
+// import './index.css';
 import Router from './router/router.tsx';
 
 function App() {
