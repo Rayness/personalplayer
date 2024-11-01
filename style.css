@@ -51,7 +51,7 @@ html, body{
 .player {
     margin-left: 24%;
     border-radius: 4px;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     display: flex;
     box-sizing: border-box;

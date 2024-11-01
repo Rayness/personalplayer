@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Заголовок страницы</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   </head>
   <body>
     <!-- Подключение файла со скриптами -->
@@ -40,10 +41,10 @@
           </div>
           <div class="player__control">
             <div class="player__control__buttons">
-              <button class="player__control__prev">Назад</button>
-              <button class="player__control__play">Играть</button>
-              <button class="player__control__next">Вперед</button>
-              <button class="player__control__settings">Настройки</button>
+              <button class="player__control__prev"><i class="fas fa-backward"></i></button>
+              <button class="player__control__play"><i class="fas fa-play"></i>Играть</button>
+              <button class="player__control__next"><i class="fas fa-forward"></i></button>
+              <button class="player__control__settings"><i class="fa-solid fa-gear"></i></button>
               <div class="player__control__duration">
                 <p class="player__control__duration__1">Длительность трека</p>
                 <input class="palyer__control__duration__scroll" type="range" value="0" id="progressSlider">

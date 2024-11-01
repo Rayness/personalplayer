@@ -113,108 +113,172 @@
     },
     {
         "id" : 17,
-        "cover" : "https://i.ytimg.com/vi/BnK_V_yjy2E/maxresdefault.jpg",
-        "artist" : "RAVANNA feat. Ai Mori",
-        "name" : "Кома",
-        "link" : "/media/RAVANNA feat. Ai Mori - Кома.mp3"
+        "cover" : "https://avatars.yandex.net/get-music-content/28589/eba28764.a.3104937-1/m1000x1000?webp=false",
+        "artist" : "Eurielle",
+        "name" : "City of the dead",
+        "link" : "/media/Eurielle - City of the dead.mp3"
     },
     {
         "id" : 18,
-        "cover" : "https://i.ytimg.com/vi/BnK_V_yjy2E/maxresdefault.jpg",
-        "artist" : "RAVANNA feat. Ai Mori",
-        "name" : "Кома",
-        "link" : "/media/RAVANNA feat. Ai Mori - Кома.mp3"
+        "cover" : "https://res.cloudinary.com/epitaph/image/upload/h_925,w_925/v1/epitaph/releases/88888-X_FallingInReverse_Zombified",
+        "artist" : "Falling In Reverse",
+        "name" : "ZOMBIFIED",
+        "link" : "/media/Falling In Reverse - ZOMBIFIED.mp3"
     },
     {
         "id" : 19,
-        "cover" : "https://i.ytimg.com/vi/BnK_V_yjy2E/maxresdefault.jpg",
-        "artist" : "RAVANNA feat. Ai Mori",
-        "name" : "Кома",
-        "link" : "/media/RAVANNA feat. Ai Mori - Кома.mp3"
+        "cover" : "https://images.genius.com/e61a18e39814f6dd49f65fcb0e198f40.1000x1000x1.jpg",
+        "artist" : "FIZICA",
+        "name" : "Готэм 2",
+        "link" : "/media/FIZICA - Готэм 2.mp3"
     },
     {
         "id" : 20,
-        "cover" : "https://i.ytimg.com/vi/BnK_V_yjy2E/maxresdefault.jpg",
-        "artist" : "RAVANNA feat. Ai Mori",
-        "name" : "Кома",
-        "link" : "/media/RAVANNA feat. Ai Mori - Кома.mp3"
+        "cover" : "https://images.genius.com/e61a18e39814f6dd49f65fcb0e198f40.1000x1000x1.jpg",
+        "artist" : "FIZICA",
+        "name" : "Готэм 3",
+        "link" : "/media/FIZICA - Готэм 3.mp3"
     },
     {
         "id" : 21,
-        "cover" : "https://i.ytimg.com/vi/BnK_V_yjy2E/maxresdefault.jpg",
-        "artist" : "RAVANNA feat. Ai Mori",
-        "name" : "Кома",
-        "link" : "/media/RAVANNA feat. Ai Mori - Кома.mp3"
+        "cover" : "https://images.genius.com/e61a18e39814f6dd49f65fcb0e198f40.1000x1000x1.jpg",
+        "artist" : "FIZICA",
+        "name" : "Готэм",
+        "link" : "/media/FIZICA - Готэм.mp3"
     },
     {
         "id" : 22,
-        "cover" : "https://i.ytimg.com/vi/BnK_V_yjy2E/maxresdefault.jpg",
-        "artist" : "RAVANNA feat. Ai Mori",
-        "name" : "Кома",
-        "link" : "/media/RAVANNA feat. Ai Mori - Кома.mp3"
+        "cover" : "https://images.genius.com/e61a18e39814f6dd49f65fcb0e198f40.1000x1000x1.jpg",
+        "artist" : "FIZICA",
+        "name" : "Чокер",
+        "link" : "/media/FIZICA - Чокер.mp3"
     },
     {
         "id" : 23,
-        "cover" : "https://i.ytimg.com/vi/BnK_V_yjy2E/maxresdefault.jpg",
-        "artist" : "RAVANNA feat. Ai Mori",
-        "name" : "Кома",
-        "link" : "/media/RAVANNA feat. Ai Mori - Кома.mp3"
+        "cover" : "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/ab/8c/13/ab8c1397-5cf9-b078-b797-70229a4303e3/cover.jpg/600x600bf-60.jpg",
+        "artist" : "GroTTesque",
+        "name" : "Стальное сердце",
+        "link" : "/media/GroTTesque - Стальное сердце.mp3"
     },
     {
         "id" : 24,
-        "cover" : "https://i.ytimg.com/vi/BnK_V_yjy2E/maxresdefault.jpg",
-        "artist" : "RAVANNA feat. Ai Mori",
-        "name" : "Кома",
-        "link" : "/media/RAVANNA feat. Ai Mori - Кома.mp3"
+        "cover" : "https://i.scdn.co/image/ab67616d0000b273b03ce145dfc370474ce2757a",
+        "artist" : "Halestorm",
+        "name" : "I Miss The Misery",
+        "link" : "/media/Halestorm - I Miss The Misery.mp3"
     },
     {
         "id" : 25,
-        "cover" : "https://i.ytimg.com/vi/BnK_V_yjy2E/maxresdefault.jpg",
-        "artist" : "RAVANNA feat. Ai Mori",
-        "name" : "Кома",
-        "link" : "/media/RAVANNA feat. Ai Mori - Кома.mp3"
+        "cover" : "https://static.wikia.nocookie.net/halsey/images/6/67/Badlands_Album_Cover.png",
+        "artist" : "Halsey",
+        "name" : "Control",
+        "link" : "/media/Halsey - Control.mp3"
     },
     {
         "id" : 26,
-        "cover" : "https://i.ytimg.com/vi/BnK_V_yjy2E/maxresdefault.jpg",
-        "artist" : "RAVANNA feat. Ai Mori",
-        "name" : "Кома",
-        "link" : "/media/RAVANNA feat. Ai Mori - Кома.mp3"
+        "cover" : "https://cdns-images.dzcdn.net/images/cover/02c28dce05f4590e812c43f3f17d8e49/0x1900-000000-80-0-0.jpg",
+        "artist" : "Hidden Citizens feat. Keeley Bumford",
+        "name" : "Immortalized",
+        "link" : "/media/Hidden Citizens feat. Keeley Bumford - Immortalized.mp3"
     },
     {
         "id" : 27,
-        "cover" : "https://i.ytimg.com/vi/BnK_V_yjy2E/maxresdefault.jpg",
-        "artist" : "RAVANNA feat. Ai Mori",
-        "name" : "Кома",
-        "link" : "/media/RAVANNA feat. Ai Mori - Кома.mp3"
+        "cover" : "https://t2.genius.com/unsafe/1249x0/https%3A%2F%2Fimages.genius.com%2Fa636627b58d07ad23513b2047cc3cea2.1000x1000x1.jpg",
+        "artist" : "Hidden Citizens feat. Rånya",
+        "name" : "Let Me Out",
+        "link" : "/media/Hidden Citizens feat. Rånya - Let Me Out.mp3"
     },
     {
         "id" : 28,
-        "cover" : "https://i.ytimg.com/vi/BnK_V_yjy2E/maxresdefault.jpg",
-        "artist" : "RAVANNA feat. Ai Mori",
-        "name" : "Кома",
-        "link" : "/media/RAVANNA feat. Ai Mori - Кома.mp3"
+        "cover" : "https://avatars.yandex.net/get-music-content/10930741/8f124fe5.a.29590705-1/m1000x1000?webp=false",
+        "artist" : "Ado",
+        "name" : "Unravel",
+        "link" : "/media/Ado - Unravel.mp3"
     },
     {
         "id" : 29,
-        "cover" : "https://i.ytimg.com/vi/BnK_V_yjy2E/maxresdefault.jpg",
-        "artist" : "RAVANNA feat. Ai Mori",
-        "name" : "Кома",
-        "link" : "/media/RAVANNA feat. Ai Mori - Кома.mp3"
+        "cover" : "https://avatars.mds.yandex.net/i?id=39a8810483883253ccfbe3488aa79845_l-4553678-images-thumbs&n=13",
+        "artist" : "Ado",
+        "name" : "Odo",
+        "link" : "/media/Ado - Odo.mp3"
     },
     {
         "id" : 30,
-        "cover" : "https://i.ytimg.com/vi/BnK_V_yjy2E/maxresdefault.jpg",
-        "artist" : "RAVANNA feat. Ai Mori",
-        "name" : "Кома",
-        "link" : "/media/RAVANNA feat. Ai Mori - Кома.mp3"
+        "cover" : "https://static.wikia.nocookie.net/nana/images/4/4e/Rose.jpg",
+        "artist" : "ANNA TSUCHIYA",
+        "name" : "Rose",
+        "link" : "/media/ANNA TSUCHIYA - Rose.mp3"
     },
     {
         "id" : 31,
-        "cover" : "https://i.ytimg.com/vi/BnK_V_yjy2E/maxresdefault.jpg",
-        "artist" : "RAVANNA feat. Ai Mori",
-        "name" : "Кома",
-        "link" : "/media/RAVANNA feat. Ai Mori - Кома.mp3"
+        "cover" : "https://cdns-images.dzcdn.net/images/cover/5489ee19bd016cfb2067082274fd3367/0x1900-000000-80-0-0.jpg",
+        "artist" : "Asper X",
+        "name" : "Bad Trip",
+        "link" : "/media/Asper X - Bad Trip.mp3"
+    },
+    {
+        "id" : 32,
+        "cover" : "https://avatars.yandex.net/get-music-content/5678677/0c73458f.a.21314673-1/m1000x1000?webp=false",
+        "artist" : "SKYND",
+        "name" : "Chris Watts",
+        "link" : "/media/SKYND - Chris Watts.mp3"
     }
+    ,
+    {
+        "id" : 33,
+        "cover" : "https://lastfm.freetls.fastly.net/i/u/ar0/695fbe26f80c429dc8ece78a185d9161.jpg",
+        "artist" : "SKYND",
+        "name" : "Elisa Lam",
+        "link" : "/media/SKYND - Elisa Lam.mp3"
+    }
+    ,
+    {
+        "id" : 34,
+        "cover" : "https://avatars.mds.yandex.net/i?id=eeecd5da9af4722fca7c7e9f04b020b6_l-8174327-images-thumbs&n=13",
+        "artist" : "SKYND",
+        "name" : "Jim Jones",
+        "link" : "/media/SKYND - Jim Jones(2019).mp3"
+    }
+    ,
+    {
+        "id" : 35,
+        "cover" : "https://avatars.yandex.net/get-music-content/139444/8f8cb75a.a.7911606-2/m1000x1000?webp=false",
+        "artist" : "SKYND",
+        "name" : "Katherine Knight",
+        "link" : "/media/SKYND - Katherine Knight.mp3"
+    }
+    ,
+    {
+        "id" : 36,
+        "cover" : "https://avatars.yandex.net/get-music-content/139444/8f8cb75a.a.7911606-2/m1000x1000?webp=false",
+        "artist" : "SKYND",
+        "name" : "Lay down your life",
+        "link" : "/media/SKYND - Lay down your life.mp3"
+    }
+    ,
+    {
+        "id" : 37,
+        "cover" : "https://avatars.yandex.net/get-music-content/4581417/d46e0552.a.15349549-1/m1000x1000?webp=false",
+        "artist" : "SKYND",
+        "name" : "Michelle Carter",
+        "link" : "/media/SKYND - Michelle Carter.mp3"
+    }
+    ,
+    {
+        "id" : 38,
+        "cover" : "https://avatars.yandex.net/get-music-content/149669/26c23a6e.a.5511746-1/m1000x1000?webp=false",
+        "artist" : "SKYND",
+        "name" : "Richard Ramirez",
+        "link" : "/media/SKYND - Richard Ramirez.mp3"
+    }
+    ,
+    {
+        "id" : 39,
+        "cover" : "https://avatars.yandex.net/get-music-content/139444/8f8cb75a.a.7911606-2/m1000x1000?webp=false",
+        "artist" : "SKYND",
+        "name" : "Tyler Hadley",
+        "link" : "/media/SKYND - Tyler Hadley.mp3"
+    }
+    
     
 ]

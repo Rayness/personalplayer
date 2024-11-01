@@ -61,12 +61,12 @@ const updatePlayerInfo = (song) => {
 
 const playSong = () => {
     myAudio.play();
-    document.querySelector(".player__control__play").textContent = "Пауза";
+    document.querySelector(".player__control__play").innerHTML = `<i class="fas fa-pause"></i>`;
 };
 
 const pauseSong = () => {
     myAudio.pause();
-    document.querySelector(".player__control__play").textContent = "Играть";
+    document.querySelector(".player__control__play").innerHTML = `<i class="fas fa-play"></i>`;
 };
 
 const playNextSong = () => {
