@@ -1,53 +1,108 @@
-let songs = []
+let songs = [];
+let currentSongIndex = 0;
+let myAudio = new Audio();
 
 const getSongs = async () => {
     try {
-        const response = await fetch("http://localhost:7999/songs.json")
-        songs = await response.json()
-        renderSongs(songs)
-        renderPlayer(songs)
+        const response = await fetch("http://localhost:7999/songs.json");
+        songs = await response.json();
+        console.log("Загруженные песни:", songs); // Проверка загрузки данных
+
+        if (songs && songs.length > 0) {
+            renderSongs(songs);
+            updatePlayerInfo(songs[currentSongIndex]);
+        } else {
+            console.error("Файл песен пуст или не содержит данных.");
+        }
     } catch (error) {
-        console.error(error)
+        console.error("Ошибка загрузки песен:", error);
     }
-}
+};
 
 const renderSongs = (songs) => {
-    console.log(songs);
-
     const songsWrapper = document.querySelector(".songsWrapper");
-    songsWrapper.innerHTML = songs.map(song => {
-        return `<div class="song js-music-btn" id="${song.id}" data-url="${song.link}">
-                    <div class="song_image">
-                        <img id="image-${song.id}" src="${song.cover}" alt="Постер музыкальной композиции">
-                    </div>
-                    <div id="song_info-${song.id}">
-                        <h3 id="song_name-${song.id}">${song.name}</h3>
-                        <h4 id="song_author-${song.id}">${song.artist}</h4>
-                    </div>
-                </div>
-                `;
-    }).join("");
-}
+    if (!songsWrapper) {
+        console.error("Контейнер .songsWrapper не найден на странице.");
+        return;
+    }
+    
+    songsWrapper.innerHTML = songs.map((song, index) => `
+        <div class="song js-music-btn" data-index="${index}">
+            <div class="song_image"><img src="${song.cover}" alt="Cover"></div>
+            <div class="song_info">
+                <h3>${song.name}</h3><h4>${song.artist}</h4>
+            </div>
+        </div>
+    `).join("");
 
-const renderPlayer = () => {
-    const myAudio = new Audio();
-    myAudio.volume = 0.1;
-    // Отладка: проверим, что кнопки рендерятся и клики работают
-    document.querySelectorAll('.js-music-btn').forEach(songElement => {
-        songElement.addEventListener('click', (event) => {
-            const audioUrl = event.currentTarget.getAttribute('data-url');
-            console.log("Воспроизведение трека с URL:", audioUrl);
-
-            if (myAudio.src !== audioUrl) {
-                myAudio.src = audioUrl;
-            }
-            myAudio.play().catch(error => console.error("Ошибка воспроизведения:", error));
+    // Обработчики кликов на каждой песне
+    document.querySelectorAll(".js-music-btn").forEach(button => {
+        button.addEventListener("click", (event) => {
+            currentSongIndex = parseInt(event.currentTarget.dataset.index);
+            updatePlayerInfo(songs[currentSongIndex]);
+            playSong();
+            console.log("Песня выбрана:", songs[currentSongIndex]); // Проверка выбранной песни
         });
     });
 };
 
-document.addEventListener('DOMContentLoaded', () => {
-    getSongs();
+const updatePlayerInfo = (song) => {
+    document.querySelector(".player__cover_img").src = song.cover;
+    document.querySelector(".player__info h3").textContent = song.name;
+    document.querySelector(".player__info h4").textContent = song.artist;
+    myAudio.src = song.audio;
+    console.log("Информация о текущем треке обновлена:", song);
+    console.log("Текущий аудиофайл:", song.audio); // Проверка пути к файлу
+};
+
+const playSong = () => {
+    myAudio.play();
+    document.querySelector(".player__control__play").textContent = "Пауза";
+};
+
+const pauseSong = () => {
+    myAudio.pause();
+    document.querySelector(".player__control__play").textContent = "Играть";
+};
+
+const playNextSong = () => {
+    currentSongIndex = (currentSongIndex + 1) % songs.length;
+    updatePlayerInfo(songs[currentSongIndex]);
+    playSong();
+};
+
+const playPrevSong = () => {
+    currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+    updatePlayerInfo(songs[currentSongIndex]);
+    playSong();
+};
+
+document.querySelector(".player__control__play").addEventListener("click", () => {
+    if (myAudio.paused) {
+        playSong();
+    } else {
+        pauseSong();
+    }
 });
 
+document.querySelector(".player__control__next").addEventListener("click", playNextSong);
+document.querySelector(".player__control__prev").addEventListener("click", playPrevSong);
 
+document.getElementById("volumeSlider").addEventListener("input", (event) => {
+    myAudio.volume = event.target.value;
+});
+
+myAudio.addEventListener("timeupdate", () => {
+    const progress = (myAudio.currentTime / myAudio.duration) * 100;
+    document.getElementById("progressSlider").value = progress;
+
+    const minutes = Math.floor(myAudio.currentTime / 60);
+    const seconds = Math.floor(myAudio.currentTime % 60).toString().padStart(2, "0");
+    document.querySelector(".player__control__duration__2").textContent = `${minutes}:${seconds}`;
+});
+
+document.getElementById("progressSlider").addEventListener("input", (event) => {
+    myAudio.currentTime = (event.target.value / 100) * myAudio.duration;
+});
+
+document.addEventListener("DOMContentLoaded", getSongs);

@@ -8,7 +8,7 @@
   </head>
   <body>
     <!-- Подключение файла со скриптами -->
-    <script src="app.js"></script>
+
 
     <!-- Начало Header -->
     <header class="header">
@@ -32,7 +32,7 @@
         <!-- Блок с проигрывателем музыки -->
         <div class="player audio-player">
           <div class="player__cover">
-            <img class="player__cover_img" src="https://avatars.mds.yandex.net/i?id=1860210a460d55628ad54c38cb0115b8_l-9783932-images-thumbs&n=13" alt="Cover трека">
+            <img class="player__cover_img" src="" alt="Cover трека">
           </div>
           <div class="player__info">
             <h3 class="player__info__text">Название трека</h3>
@@ -46,17 +46,18 @@
               <button class="player__control__settings">Настройки</button>
               <div class="player__control__duration">
                 <p class="player__control__duration__1">Длительность трека</p>
-                <input class="palyer__control__duration__scroll" type="range" value="0" id="progress">
+                <input class="palyer__control__duration__scroll" type="range" value="0" id="progressSlider">
                 <p class="player__control__duration__2">Длительность трека</p>
               </div>
             </div>
           </div>
           <div class="player__control__volume">
-            <input type="range" value="100" id="volume">
+            <input type="range" min="0" max="1" step="0.01" value="20" id="volumeSlider">
           </div>
         </div>
         <!-- Конец блока с проигрывателем -->
     </main>
     <!-- Конец страницы -->
+  <script src="app.js" defer></script>
   </body>
 </html>
