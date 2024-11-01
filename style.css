@@ -44,11 +44,16 @@ html, body{
     word-wrap: break-word; /* Поддержка для более старых браузеров */
     word-break: break-all; /* Позволяет разбивать длинные слова */
     white-space: normal; /* Позволяет переносу текста */
+    cursor: pointer;
+    transition: transform 0.5s ease, background-color 0.5s ease, border-radius 0.5s ease;
 }
 
 .song:hover {
+    transform: scale(1.1);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Более глубокая тень при наведении */
     border-radius: 4px;
+    background-color: #800000;
+    color: #F2E8C6;
 }
 
 .song_image {
@@ -95,6 +100,7 @@ html, body{
 
 
 .player__cover_img {
+    object-fit: cover;
     padding-right: 10px;
     border-radius: 4px;
     height: 100px;
@@ -115,9 +121,18 @@ html, body{
     margin: auto;
 }
 
+.player__control button, input{
+    cursor: pointer;
+}
+
 .player__control__buttons {
     display: flex;
     padding: 5px;
+    transition: transform 0.3s ease;
+}
+
+.player__control__buttons button:hover {
+    transform: scale(1.1);
 }
 
 .player__control__duration {
