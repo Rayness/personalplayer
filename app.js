@@ -50,7 +50,7 @@ const updatePlayerInfo = (song) => {
     document.querySelector(".player__cover_img").src = song.cover;
     document.querySelector(".player__info h3").textContent = song.name;
     document.querySelector(".player__info h4").textContent = song.artist;
-    myAudio.src = song.audio;
+    myAudio.src = song.link;
     console.log("Информация о текущем треке обновлена:", song);
     console.log("Текущий аудиофайл:", song.audio); // Проверка пути к файлу
 };
