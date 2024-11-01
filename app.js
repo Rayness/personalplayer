@@ -1,7 +1,4 @@
-
-
 let songs = []
-
 
 const getSongs = async () => {
     try {
@@ -19,7 +16,7 @@ const renderSongs = (songs) => {
 
     const songsWrapper = document.querySelector(".songsWrapper");
     songsWrapper.innerHTML = songs.map(song => {
-        return `<div class="song js-music-btn" id="${song.id}">
+        return `<div class="song js-music-btn" id="${song.id}" data-url="${song.link}">
                     <div class="song_image">
                         <img id="image-${song.id}" src="${song.cover}" alt="Постер музыкальной композиции">
                     </div>
@@ -32,25 +29,22 @@ const renderSongs = (songs) => {
     }).join("");
 }
 
-const renderPlayer = (songs) => {
-    var myAudio = new Audio();
+const renderPlayer = () => {
+    const myAudio = new Audio();
+    myAudio.volume = 0.1;
+    // Отладка: проверим, что кнопки рендерятся и клики работают
+    document.querySelectorAll('.js-music-btn').forEach(songElement => {
+        songElement.addEventListener('click', (event) => {
+            const audioUrl = event.currentTarget.getAttribute('data-url');
+            console.log("Воспроизведение трека с URL:", audioUrl);
 
-    const song = document.querySelector('#song-3');
-
-    var fffff = document.onclick = function(e) {
-            console.log(e.target);
-            return e.target
-          };
-
-    console.log(song, fffff);
-    
-        
-    
-    myAudio.src = songs[0].link
-    
-    console.log('Файл музыки', myAudio);
-    
-    }
+            if (myAudio.src !== audioUrl) {
+                myAudio.src = audioUrl;
+            }
+            myAudio.play().catch(error => console.error("Ошибка воспроизведения:", error));
+        });
+    });
+};
 
 document.addEventListener('DOMContentLoaded', () => {
     getSongs();
