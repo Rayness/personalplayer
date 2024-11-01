@@ -49,8 +49,8 @@ const renderSongs = (songs) => {
 const updatePlayerInfo = (song) => {
     
     document.querySelector(".player__cover_img").src = song.cover;
-    document.querySelector(".player__info h3").textContent = song.name;
-    document.querySelector(".player__info h4").textContent = song.artist;
+    document.querySelector(".player__info__title").textContent = song.name;
+    document.querySelector(".player__info__artist").textContent = song.artist;
 
     console.log('Максимальное время воспроизведения в секундах', myAudio.duration);
 
