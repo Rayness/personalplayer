@@ -47,9 +47,13 @@ const renderSongs = (songs) => {
 };
 
 const updatePlayerInfo = (song) => {
+    
     document.querySelector(".player__cover_img").src = song.cover;
     document.querySelector(".player__info h3").textContent = song.name;
     document.querySelector(".player__info h4").textContent = song.artist;
+
+    console.log('Максимальное время воспроизведения в секундах', myAudio.duration);
+
     myAudio.src = song.link;
     console.log("Информация о текущем треке обновлена:", song);
     console.log("Текущий аудиофайл:", song.audio); // Проверка пути к файлу
@@ -70,6 +74,12 @@ const playNextSong = () => {
     updatePlayerInfo(songs[currentSongIndex]);
     playSong();
 };
+
+    const autoNextSong = () => {
+        if (myAudio.currentTime == myAudio.duration) {
+            playNextSong();
+        }
+    }
 
 const playPrevSong = () => {
     currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
@@ -95,10 +105,17 @@ document.getElementById("volumeSlider").addEventListener("input", (event) => {
 myAudio.addEventListener("timeupdate", () => {
     const progress = (myAudio.currentTime / myAudio.duration) * 100;
     document.getElementById("progressSlider").value = progress;
-
-    const minutes = Math.floor(myAudio.currentTime / 60);
+    console.log('Текущее время воспроизведения в секундах', myAudio.currentTime);
+    
+    const minutes = Math.floor(myAudio.currentTime / 60);  
     const seconds = Math.floor(myAudio.currentTime % 60).toString().padStart(2, "0");
-    document.querySelector(".player__control__duration__2").textContent = `${minutes}:${seconds}`;
+    
+    const minute_2 = Math.floor(myAudio.duration / 60);
+    const seconds_2 = Math.floor(myAudio.duration % 60).toString().padStart(2,"0");
+    
+    document.querySelector(".player__control__duration__2").textContent = `${minute_2}:${seconds_2}`;
+    document.querySelector(".player__control__duration__1").textContent = `${minutes}:${seconds}`;
+    autoNextSong();
 });
 
 document.getElementById("progressSlider").addEventListener("input", (event) => {
