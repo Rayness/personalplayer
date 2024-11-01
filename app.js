@@ -75,17 +75,18 @@ const playNextSong = () => {
     playSong();
 };
 
-    const autoNextSong = () => {
-        if (myAudio.currentTime == myAudio.duration) {
-            playNextSong();
-        }
-    }
-
 const playPrevSong = () => {
     currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
     updatePlayerInfo(songs[currentSongIndex]);
     playSong();
 };
+
+const autoNextSong = () => {
+    if (myAudio.currentTime == myAudio.duration) {
+        playNextSong();
+    }
+}
+
 
 document.querySelector(".player__control__play").addEventListener("click", () => {
     if (myAudio.paused) {
