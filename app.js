@@ -27,8 +27,8 @@ const renderSongs = (songs) => {
     }
     
     songsWrapper.innerHTML = songs.map((song, index) => `
-        <div class="song js-music-btn" data-index="${index}">
-            <div class="song_image"><img src="${song.cover}" alt="Cover"></div>
+        <div class="song js-music-btn" data-index="${index}" id="songCard">
+            <div class="song_image"><img id="songCover" src="${song.cover}" alt="Cover"></div>
             <div class="song_info">
                 <h3>${song.name}</h3><h4>${song.artist}</h4>
             </div>
@@ -40,11 +40,70 @@ const renderSongs = (songs) => {
         button.addEventListener("click", (event) => {
             currentSongIndex = parseInt(event.currentTarget.dataset.index);
             updatePlayerInfo(songs[currentSongIndex]);
+            
             playSong();
             console.log("Песня выбрана:", songs[currentSongIndex]); // Проверка выбранной песни
         });
     });
+    changeColorBackground(songs);
 };
+
+
+const changeColorBackground = (song) => {
+    const box = document.getElementById('songCard');
+    const img = document.getElementById('songCover');
+    
+    console.log('Функция работает', box, img);
+    
+    let image = document.getElementById('songCover').src;
+
+    console.log('КУАРТИНКА', image);
+    
+    img.crossOrigin = "Anonymous"; // Для кросс-доменных изображений
+    
+    // Функция для вычисления среднего цвета изображения
+    function getAverageColor(image) {
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        
+        canvas.width = image.width;
+        canvas.height = image.height;
+        ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+        
+        const pixelData = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+        let r = 0, g = 0, b = 0;
+        let pixelCount = 0;
+        
+        for (let i = 0; i < pixelData.length; i += 4) {
+            r += pixelData[i];
+            g += pixelData[i + 1];
+            b += pixelData[i + 2];
+            pixelCount++;
+        }
+    
+        // Средний цвет
+        r = Math.floor(r / pixelCount);
+        g = Math.floor(g / pixelCount);
+        b = Math.floor(b / pixelCount);
+        
+        console.log('выполняется');
+        
+
+        return `rgb(${r}, ${g}, ${b})`;
+    }
+    
+    // Обработчики событий для наведения и ухода курсора
+    box.addEventListener('mouseover', () => {
+        const averageColor = getAverageColor(img);
+        box.style.backgroundColor = averageColor;
+    });
+    
+    box.addEventListener('mouseout', () => {
+        box.style.backgroundColor = ''; // Возвращаем исходный цвет
+    });
+    
+};
+
 
 const updatePlayerInfo = (song) => {
     

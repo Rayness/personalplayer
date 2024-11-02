@@ -279,6 +279,20 @@
         "name" : "Tyler Hadley",
         "link" : "/media/SKYND - Tyler Hadley.mp3"
     }
-    
-    
+    ,
+    {
+        "id" : 40,
+        "cover" : "https://i.ytimg.com/vi/dWW2zXUOIC0/maxresdefault.jpg",
+        "artist" : "Norma Tale",
+        "name" : "Кисточка II",
+        "link" : "/media/Norma Tale - Кисточка II.mp3"
+    }
+    ,
+    {
+        "id" : 41,
+        "cover" : "https://i.scdn.co/image/ab67616d0000b2731724b0cef6a23963d21c3b8a",
+        "artist" : "Creepy Nuts",
+        "name" : "オトノケ(Otonoke)",
+        "link" : "/media/Creepy Nuts - オトノケ(Otonoke).mp3"
+    }
 ]
