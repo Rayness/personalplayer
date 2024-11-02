@@ -26,6 +26,14 @@ html, body{
     text-decoration: none;
 }
 
+
+.sort {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+}
+
+
 .songsWrapper {
     display: flex;
     flex-wrap: wrap;
@@ -131,15 +139,26 @@ html, body{
     cursor: pointer;
 }
 
-.player__control__buttons {
-    display: flex;
-    padding: 5px;
-    transition: transform 0.3s ease;
-}
+.css-button-fully-rounded--green {
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 20px;
+    border: 2px solid #57cc99;
+    background: #57cc99;
+  }
+  .css-button-fully-rounded--green:hover {
+    background: #fff;
+    color: #57cc99
+  }
 
-.player__control__buttons button:hover {
-    transform: scale(1.1);
-}
 
 .player__control__duration {
     display: flex;
@@ -148,4 +167,5 @@ html, body{
 
 .player__control__volume {
     display: flex;
+    height: 1005px;
 }

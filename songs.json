@@ -295,4 +295,28 @@
         "name" : "オトノケ(Otonoke)",
         "link" : "/media/Creepy Nuts - オトノケ(Otonoke).mp3"
     }
+    ,
+    {
+        "id" : 42,
+        "cover" : "https://i.ytimg.com/vi/hNjeAnwGhzc/hqdefault.jpg",
+        "artist" : "Apashe ft. Vo Williams",
+        "name" : "Work",
+        "link" : "/media/Apashe - Work (ft. Vo Williams).mp3"
+    }
+    ,
+    {
+        "id" : 43,
+        "cover" : "https://i.ytimg.com/vi/mvzdWgfG1vM/maxresdefault.jpg",
+        "artist" : "blueberry",
+        "name" : "EVA 3",
+        "link" : "/media/blueberry - EVA 3.mp3"
+    }
+    ,
+    {
+        "id" : 44,
+        "cover" : "https://i.ytimg.com/vi/FWBjzQnDb8o/maxresdefault.jpg",
+        "artist" : "Animadrop",
+        "name" : "Stuck in a Timeloop",
+        "link" : "/media/Animadrop - Stuck in a Timeloop.mp3"
+    }
 ]

@@ -1,6 +1,7 @@
 let songs = [];
 let currentSongIndex = 0;
 let myAudio = new Audio();
+myAudio.volume = localStorage.getItem('volume');
 
 const getSongs = async () => {
     try {
@@ -27,7 +28,7 @@ const renderSongs = (songs) => {
     }
     
     songsWrapper.innerHTML = songs.map((song, index) => `
-        <div class="song js-music-btn" data-index="${index}" id="songCard">
+        <div class="song js-music-btn" data-index="${index}" id="${song.id}">
             <div class="song_image"><img id="songCover" src="${song.cover}" alt="Cover"></div>
             <div class="song_info">
                 <h3>${song.name}</h3><h4>${song.artist}</h4>
@@ -40,71 +41,100 @@ const renderSongs = (songs) => {
         button.addEventListener("click", (event) => {
             currentSongIndex = parseInt(event.currentTarget.dataset.index);
             updatePlayerInfo(songs[currentSongIndex]);
-            
             playSong();
             console.log("Песня выбрана:", songs[currentSongIndex]); // Проверка выбранной песни
         });
     });
-    changeColorBackground(songs);
 };
 
 
-const changeColorBackground = (song) => {
-    const box = document.getElementById('songCard');
-    const img = document.getElementById('songCover');
-    
-    console.log('Функция работает', box, img);
-    
-    let image = document.getElementById('songCover').src;
 
-    console.log('КУАРТИНКА', image);
-    
-    img.crossOrigin = "Anonymous"; // Для кросс-доменных изображений
-    
-    // Функция для вычисления среднего цвета изображения
-    function getAverageColor(image) {
-        const canvas = document.createElement('canvas');
-        const ctx = canvas.getContext('2d');
-        
-        canvas.width = image.width;
-        canvas.height = image.height;
-        ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
-        
-        const pixelData = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
-        let r = 0, g = 0, b = 0;
-        let pixelCount = 0;
-        
-        for (let i = 0; i < pixelData.length; i += 4) {
-            r += pixelData[i];
-            g += pixelData[i + 1];
-            b += pixelData[i + 2];
-            pixelCount++;
-        }
-    
-        // Средний цвет
-        r = Math.floor(r / pixelCount);
-        g = Math.floor(g / pixelCount);
-        b = Math.floor(b / pixelCount);
-        
-        console.log('выполняется');
-        
 
-        return `rgb(${r}, ${g}, ${b})`;
+// Сохранение плеера при переходе между вкладками
+// 
+// 
+// 
+
+// Сохраняем состояние плеера
+const savePlayerState = () => {
+    const state = {
+        currentSongIndex,
+        currentTime: myAudio.currentTime,
+        isPlaying: !myAudio.paused
+    };
+    localStorage.setItem("playerState", JSON.stringify(state));
+};
+
+// Загрузка состояния плеера
+const loadPlayerState = () => {
+    const state = JSON.parse(localStorage.getItem("playerState"));
+    if (state) {
+        currentSongIndex = state.currentSongIndex;
+        updatePlayerInfo(songs[currentSongIndex]); // Обновляем данные плеера
+        myAudio.currentTime = state.currentTime;
+        if (state.isPlaying) playSong();
     }
-    
-    // Обработчики событий для наведения и ухода курсора
-    box.addEventListener('mouseover', () => {
-        const averageColor = getAverageColor(img);
-        box.style.backgroundColor = averageColor;
-    });
-    
-    box.addEventListener('mouseout', () => {
-        box.style.backgroundColor = ''; // Возвращаем исходный цвет
-    });
-    
 };
 
+window.addEventListener("beforeunload", savePlayerState);
 
+document.addEventListener("DOMContentLoaded", () => {
+    getSongs().then(() => loadPlayerState());
+});
+
+myAudio.addEventListener("timeupdate", savePlayerState);
+document.querySelector(".player__control__next").addEventListener("click", () => {
+    playNextSong();
+    savePlayerState();
+});
+document.querySelector(".player__control__prev").addEventListener("click", () => {
+    playPrevSong();
+    savePlayerState();
+});
+
+//
+//
+//
+// Конец этой части когда
+
+
+// Функция для сортировки
+const sortSongs = (criterion) => {
+    songs.sort((a, b) => {
+        if (criterion === "name") {
+            return a.name.localeCompare(b.name);
+        } else if (criterion === "artist") {
+            return a.artist.localeCompare(b.artist);
+        } else if (criterion === "id") {
+            return a.id.localeCompare(b.id) // Предполагается, что длительность в секундах или миллисекундах
+        }
+    });
+    renderSongs(songs); // Перерисовываем список
+};
+
+// Обработчик изменения выбора сортировки
+document.getElementById("sort").addEventListener("change", (event) => {
+    const selectedCriterion = event.target.value;
+    sortSongs(selectedCriterion);
+});
+
+
+// Функция для фильтрации песен по запросу
+const searchSongs = (query) => {
+    const filteredSongs = songs.filter(song =>
+        song.name.toLowerCase().includes(query.toLowerCase()) ||
+        song.artist.toLowerCase().includes(query.toLowerCase())
+    );
+    renderSongs(filteredSongs); // Перерисовываем список с отфильтрованными песнями
+};
+
+document.getElementById("searchInput").addEventListener("input", (event) => {
+    const query = event.target.value;
+    searchSongs(query);
+});
+
+
+// Обновление информации у плеера
 const updatePlayerInfo = (song) => {
     
     document.querySelector(".player__cover_img").src = song.cover;
@@ -155,13 +185,18 @@ document.querySelector(".player__control__play").addEventListener("click", () =>
     }
 });
 
+// Кнопки переключения песни
 document.querySelector(".player__control__next").addEventListener("click", playNextSong);
 document.querySelector(".player__control__prev").addEventListener("click", playPrevSong);
 
+// Ползунок регулеровки громкости
 document.getElementById("volumeSlider").addEventListener("input", (event) => {
     myAudio.volume = event.target.value;
+    localStorage.setItem('volume', myAudio.volume);
 });
 
+
+// Цифровое отображение времени песни
 myAudio.addEventListener("timeupdate", () => {
     const progress = (myAudio.currentTime / myAudio.duration) * 100;
     document.getElementById("progressSlider").value = progress;
@@ -178,6 +213,7 @@ myAudio.addEventListener("timeupdate", () => {
     autoNextSong();
 });
 
+// Отображение прогресса песни в виде полосы
 document.getElementById("progressSlider").addEventListener("input", (event) => {
     myAudio.currentTime = (event.target.value / 100) * myAudio.duration;
 });
