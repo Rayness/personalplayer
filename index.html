@@ -1,31 +1,58 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="utf-8">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Заголовок страницы</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-  </head>
-  <body>
-
-    <!-- Начало Header -->
+    <title>Мой музыкальный плеер</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
     <header class="header">
-        <div class="site_name">
-            <h2>
-                Personal Music
-            </h2>
-            <nav class="menu">
-                <a class="sub_menu" href="index.html">Главная страница</a></li>
-                <a class="sub_menu" href="catalog.html">Каталог</a>
-              </nav>
-        </div>
+        <h2>Personal Music</h2>
+        <nav class="menu">
+            <a href="#" class="nav-link" onclick="loadHomePage()">Главная</a>
+            <a href="tracks.html" class="nav-link-tracks">Каталог</a>
+        </nav>
     </header>
-    <!-- Конец Header -->
-    
-    <main>
-        <audio controls id="song">
-            <source src="media/RIOT - Overkill.mp3" type="audio/mpeg">
-        </audio>
-        <input type="range" value="0" id="progress">
+
+    <!-- Контейнер для динамического контента -->
+    <main id="content">
+        <h3>Добро пожаловать на страницу с музыкой!</h3>
     </main>
-  </body>
+
+    <!-- Закрепленный аудиоплеер -->
+    <div class="audio-player" id="audioPlayer">
+      <div class="player__cover">
+          <img class="player__cover_img" src="https://example.com/default-cover.jpg" alt="Обложка трека">
+      </div>
+      <div class="player__info">
+          <h3 class="player__info__title">Название трека</h3>
+          <h4 class="player__info__artist">Автор трека</h4>
+      </div>
+      
+      <!-- Ползунок прогресса и время -->
+      <div class="player__progress">
+          <span id="currentTime">0:00</span>
+          <input type="range" id="progressSlider" min="0" max="100" value="0">
+          <span id="totalTime">0:00</span>
+      </div>
+      
+      <!-- Кнопки управления -->
+      <div class="player__control">
+        <button id="prev" onclick="playPreviousSong()">Назад</button>
+        <button id="play-pause" onclick="togglePlayPause()">Воспроизведение</button>
+        <button id="next" onclick="playNextSong()">Вперёд</button>
+      </div>
+      
+      <!-- Управление громкостью -->
+      <div class="player__volume">
+          <label for="volumeSlider">Громкость:</label>
+          <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.5">
+      </div>
+    </div>
+  
+
+  <script src="app.js" defer></script>
+</body>
+</html>

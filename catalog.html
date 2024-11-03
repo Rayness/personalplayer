@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Заголовок страницы</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-old.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   </head>
   <body>
@@ -27,53 +27,56 @@
      
     <!-- Начало страницы -->
     <main id="main">
-      <div class="additional">
-        <div class="search">
-          <input type="text" id="searchInput" placeholder="Поиск по названию или автору">
+      <div id="content">
+          <div class="additional">
+          <div class="search">
+            <input type="text" id="searchInput" placeholder="Поиск по названию или автору">
+          </div>
+          <div class="sort">
+            <label for="sort">Сортировка:</label>
+            <select name="" id="sort">
+                <option value="name">Название</option>
+                <option value="artist">Автор</option>
+                <option value="id">По ID песни</option>
+            </select>
+          </div>
         </div>
-        <div class="sort">
-          <label for="sort">Сортировка:</label>
-          <select name="" id="sort">
-              <option value="name">Название</option>
-              <option value="artist">Автор</option>
-              <option value="id">По ID песни</option>
-          </select>
+        <div class="songsWrapper">
+          
+        </div>
+        <!-- Блок с проигрывателем музыки -->
+        <div class="player audio-player" id="player">
+          <div class="player__info">
+            <div class="player__cover">
+              <img class="player__cover_img" src="" alt="Cover трека">
+            </div>
+            <div class="player__info__text">
+              <h3 class="player__info__title">Название трека</h3>
+              <h4 class="player__info__artist">Автор трека</h4>
+            </div>
+          </div>
+          <div class="player__control">
+            <div class="player__control__buttons">
+              <button class="player__control__prev css-button-fully-rounded--green"><i class="fas fa-backward"></i></button>
+              <button class="player__control__play css-button-fully-rounded--green"><i class="fas fa-play"></i></button>
+              <button class="player__control__next css-button-fully-rounded--green"><i class="fas fa-forward"></i></button>
+              <button class="player__control__settings"><i class="fa-solid fa-gear"></i></button>
+            </div>
+            <div class="player__control__duration">
+              <p class="player__control__duration__1 color">Длительность трека</p>
+              <input class="palyer__control__duration__scroll" type="range" value="0" id="progressSlider">
+              <p class="player__control__duration__2 color">Длительность трека</p>
+            </div>
+          </div>
+          <div class="player__control__volume">
+            <input type="range" min="0" max="1" step="0.01" id="volumeSlider">
+          </div>
         </div>
       </div>
-      <div class="songsWrapper">
-
-      </div>
-      <!-- Блок с проигрывателем музыки -->
-      <div class="player audio-player" id="player">
-        <div class="player__info">
-          <div class="player__cover">
-            <img class="player__cover_img" src="" alt="Cover трека">
-          </div>
-          <div class="player__info__text">
-            <h3 class="player__info__title">Название трека</h3>
-            <h4 class="player__info__artist">Автор трека</h4>
-          </div>
-        </div>
-        <div class="player__control">
-          <div class="player__control__buttons">
-            <button class="player__control__prev css-button-fully-rounded--green"><i class="fas fa-backward"></i></button>
-            <button class="player__control__play css-button-fully-rounded--green"><i class="fas fa-play"></i></button>
-            <button class="player__control__next css-button-fully-rounded--green"><i class="fas fa-forward"></i></button>
-            <button class="player__control__settings"><i class="fa-solid fa-gear"></i></button>
-          </div>
-          <div class="player__control__duration">
-            <p class="player__control__duration__1 color">Длительность трека</p>
-            <input class="palyer__control__duration__scroll" type="range" value="0" id="progressSlider">
-            <p class="player__control__duration__2 color">Длительность трека</p>
-          </div>
-        </div>
-        <div class="player__control__volume">
-          <input type="range" min="0" max="1" step="0.01" id="volumeSlider">
-        </div>
-      </div>
+      
         <!-- Конец блока с проигрывателем -->
     </main>
     <!-- Конец страницы -->
-  <script src="app.js" defer></script>
+  <script src="app-new-old.js" defer></script>
   </body>
 </html>

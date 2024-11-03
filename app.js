@@ -1,104 +1,83 @@
 let songs = [];
 let currentSongIndex = 0;
 let myAudio = new Audio();
-myAudio.volume = localStorage.getItem('volume');
 
+// Функция для обновления информации в плеере
+const updatePlayerInfo = (song) => {
+    document.querySelector(".player__cover_img").src = song.cover;
+    document.querySelector(".player__info__title").textContent = song.name;
+    document.querySelector(".player__info__artist").textContent = song.artist;
+    myAudio.src = song.audio;
+};
+
+// Функция для обновления времени и прогресса
+myAudio.addEventListener("timeupdate", () => {
+    const currentTime = myAudio.currentTime;
+    const duration = myAudio.duration;
+    const progress = (currentTime / duration) * 100;
+
+    // Обновление значения ползунка
+    document.getElementById("progressSlider").value = progress;
+
+    // Обновление отображения текущего времени
+    document.getElementById("currentTime").textContent = formatTime(currentTime);
+    document.getElementById("totalTime").textContent = formatTime(duration);
+});
+
+// Функция форматирования времени в минуты и секунды
+const formatTime = (time) => {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60).toString().padStart(2, "0");
+    return `${minutes}:${seconds}`;
+};
+
+// Функция для загрузки и отображения треков из JSON
+const loadTracksPage = async () => {
+    try {
+        const response = await fetch("tracks.html");
+        const html = await response.text();
+        document.getElementById("content").innerHTML = html;
+        
+        getSongs(); // Загружаем песни после отображения страницы
+    } catch (error) {
+        console.error("Ошибка загрузки страницы с треками:", error);
+    }
+};
+
+// Подгружаем песни из JSON
 const getSongs = async () => {
     try {
-        const response = await fetch("http://localhost:7999/songs.json");
+        const response = await fetch("songs.json");
         songs = await response.json();
-        console.log("Загруженные песни:", songs); // Проверка загрузки данных
-
-        if (songs && songs.length > 0) {
-            renderSongs(songs);
-            updatePlayerInfo(songs[currentSongIndex]);
-        } else {
-            console.error("Файл песен пуст или не содержит данных.");
-        }
+        renderSongs(songs);
+        updatePlayerInfo(songs[currentSongIndex]); // Устанавливаем начальный трек
     } catch (error) {
         console.error("Ошибка загрузки песен:", error);
     }
 };
 
+// Отображение списка треков
 const renderSongs = (songs) => {
-    const songsWrapper = document.querySelector(".songsWrapper");
-    if (!songsWrapper) {
-        console.error("Контейнер .songsWrapper не найден на странице.");
-        return;
-    }
-    
-    songsWrapper.innerHTML = songs.map((song, index) => `
-        <div class="song js-music-btn" data-index="${index}" id="${song.id}">
-            <div class="song_image"><img id="songCover" src="${song.cover}" alt="Cover"></div>
-            <div class="song_info">
-                <h3>${song.name}</h3><h4>${song.artist}</h4>
+    const wrapper = document.getElementById("songsWrapper");
+    wrapper.innerHTML = songs.map((song, index) => `
+        <div class="song" data-index="${index}">
+            <img src="${song.cover}" alt="cover">
+            <div>
+                <h3>${song.name}</h3>
+                <h4>${song.artist}</h4>
             </div>
         </div>
     `).join("");
 
-    // Обработчики кликов на каждой песне
-    document.querySelectorAll(".js-music-btn").forEach(button => {
-        button.addEventListener("click", (event) => {
-            currentSongIndex = parseInt(event.currentTarget.dataset.index);
-            updatePlayerInfo(songs[currentSongIndex]);
-            playSong();
-            console.log("Песня выбрана:", songs[currentSongIndex]); // Проверка выбранной песни
+    document.querySelectorAll(".song").forEach((songElement) => {
+        songElement.addEventListener("click", (e) => {
+            currentSongIndex = parseInt(e.currentTarget.dataset.index);
+            playSong(songs[currentSongIndex]);
         });
     });
 };
 
-
-
-
-// Сохранение плеера при переходе между вкладками
-// 
-// 
-// 
-
-// Сохраняем состояние плеера
-const savePlayerState = () => {
-    const state = {
-        currentSongIndex,
-        currentTime: myAudio.currentTime,
-        isPlaying: !myAudio.paused
-    };
-    localStorage.setItem("playerState", JSON.stringify(state));
-};
-
-// Загрузка состояния плеера
-const loadPlayerState = () => {
-    const state = JSON.parse(localStorage.getItem("playerState"));
-    if (state) {
-        currentSongIndex = state.currentSongIndex;
-        updatePlayerInfo(songs[currentSongIndex]); // Обновляем данные плеера
-        myAudio.currentTime = state.currentTime;
-        if (state.isPlaying) playSong();
-    }
-};
-
-window.addEventListener("beforeunload", savePlayerState);
-
-document.addEventListener("DOMContentLoaded", () => {
-    getSongs().then(() => loadPlayerState());
-});
-
-myAudio.addEventListener("timeupdate", savePlayerState);
-document.querySelector(".player__control__next").addEventListener("click", () => {
-    playNextSong();
-    savePlayerState();
-});
-document.querySelector(".player__control__prev").addEventListener("click", () => {
-    playPrevSong();
-    savePlayerState();
-});
-
-//
-//
-//
-// Конец этой части когда
-
-
-// Функция для сортировки
+// Функция для сортировки песен по выбранному критерию
 const sortSongs = (criterion) => {
     songs.sort((a, b) => {
         if (criterion === "name") {
@@ -106,20 +85,21 @@ const sortSongs = (criterion) => {
         } else if (criterion === "artist") {
             return a.artist.localeCompare(b.artist);
         } else if (criterion === "id") {
-            return a.id.localeCompare(b.id) // Предполагается, что длительность в секундах или миллисекундах
+            return a.id - b.id;
         }
     });
-    renderSongs(songs); // Перерисовываем список
+    renderSongs(songs); // Перерисовываем список с отсортированными песнями
 };
 
 // Обработчик изменения выбора сортировки
-document.getElementById("sort").addEventListener("change", (event) => {
-    const selectedCriterion = event.target.value;
-    sortSongs(selectedCriterion);
+document.addEventListener("change", (event) => {
+    if (event.target.id === "sort") {
+        const selectedCriterion = event.target.value;
+        sortSongs(selectedCriterion);
+    }
 });
 
-
-// Функция для фильтрации песен по запросу
+// Функция для поиска песен по запросу
 const searchSongs = (query) => {
     const filteredSongs = songs.filter(song =>
         song.name.toLowerCase().includes(query.toLowerCase()) ||
@@ -128,94 +108,55 @@ const searchSongs = (query) => {
     renderSongs(filteredSongs); // Перерисовываем список с отфильтрованными песнями
 };
 
-document.getElementById("searchInput").addEventListener("input", (event) => {
-    const query = event.target.value;
-    searchSongs(query);
+// Обработчик события input для поля поиска
+document.addEventListener("input", (event) => {
+    if (event.target.id === "searchInput") {
+        const query = event.target.value;
+        searchSongs(query);
+    }
 });
 
+// Обработка изменения ползунка прогресса
+document.getElementById("progressSlider").addEventListener("input", (event) => {
+    const value = event.target.value;
+    myAudio.currentTime = (value / 100) * myAudio.duration;
+});
 
-// Обновление информации у плеера
-const updatePlayerInfo = (song) => {
-    
-    document.querySelector(".player__cover_img").src = song.cover;
-    document.querySelector(".player__info__title").textContent = song.name;
-    document.querySelector(".player__info__artist").textContent = song.artist;
+// Управление громкостью
+document.getElementById("volumeSlider").addEventListener("input", (event) => {
+    myAudio.volume = event.target.value;
+    localStorage.setItem('volume', myAudio.volume); // Сохраняем громкость
+});
 
-    console.log('Максимальное время воспроизведения в секундах', myAudio.duration);
-
-    myAudio.src = song.link;
-    console.log("Информация о текущем треке обновлена:", song);
-    console.log("Текущий аудиофайл:", song.audio); // Проверка пути к файлу
-};
-
-const playSong = () => {
+// Управление плеером
+const playSong = (song) => {
+    updatePlayerInfo(song);
     myAudio.play();
-    document.querySelector(".player__control__play").innerHTML = `<i class="fas fa-pause"></i>`;
-};
-
-const pauseSong = () => {
-    myAudio.pause();
-    document.querySelector(".player__control__play").innerHTML = `<i class="fas fa-play"></i>`;
 };
 
 const playNextSong = () => {
     currentSongIndex = (currentSongIndex + 1) % songs.length;
-    updatePlayerInfo(songs[currentSongIndex]);
-    playSong();
+    playSong(songs[currentSongIndex]);
 };
 
-const playPrevSong = () => {
+const playPreviousSong = () => {
     currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
-    updatePlayerInfo(songs[currentSongIndex]);
-    playSong();
+    playSong(songs[currentSongIndex]);
 };
 
-const autoNextSong = () => {
-    if (myAudio.currentTime == myAudio.duration) {
-        playNextSong();
-    }
-}
-
-
-document.querySelector(".player__control__play").addEventListener("click", () => {
+// Обработка кнопки Play/Pause
+const togglePlayPause = () => {
     if (myAudio.paused) {
-        playSong();
+        myAudio.play();
     } else {
-        pauseSong();
+        myAudio.pause();
+    }
+};
+
+// Загрузка страницы с треками при нажатии на ссылку
+document.addEventListener("click", (e) => {
+    if (e.target.matches(".nav-link-tracks")) {
+        e.preventDefault();
+        loadTracksPage();
     }
 });
-
-// Кнопки переключения песни
-document.querySelector(".player__control__next").addEventListener("click", playNextSong);
-document.querySelector(".player__control__prev").addEventListener("click", playPrevSong);
-
-// Ползунок регулеровки громкости
-document.getElementById("volumeSlider").addEventListener("input", (event) => {
-    myAudio.volume = event.target.value;
-    localStorage.setItem('volume', myAudio.volume);
-});
-
-
-// Цифровое отображение времени песни
-myAudio.addEventListener("timeupdate", () => {
-    const progress = (myAudio.currentTime / myAudio.duration) * 100;
-    document.getElementById("progressSlider").value = progress;
-    console.log('Текущее время воспроизведения в секундах', myAudio.currentTime);
-    
-    const minutes = Math.floor(myAudio.currentTime / 60);  
-    const seconds = Math.floor(myAudio.currentTime % 60).toString().padStart(2, "0");
-    
-    const minute_2 = Math.floor(myAudio.duration / 60);
-    const seconds_2 = Math.floor(myAudio.duration % 60).toString().padStart(2,"0");
-    
-    document.querySelector(".player__control__duration__2").textContent = `${minute_2}:${seconds_2}`;
-    document.querySelector(".player__control__duration__1").textContent = `${minutes}:${seconds}`;
-    autoNextSong();
-});
-
-// Отображение прогресса песни в виде полосы
-document.getElementById("progressSlider").addEventListener("input", (event) => {
-    myAudio.currentTime = (event.target.value / 100) * myAudio.duration;
-});
-
-document.addEventListener("DOMContentLoaded", getSongs);
