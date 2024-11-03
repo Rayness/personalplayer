@@ -1,5 +1,5 @@
 import React, { useEffect, useState} from "react";
-import { usePlayer } from "./PlayerContext";
+import { usePlayer } from "../PlayerContext";
 
 const Playlist = () => {
     const { playSong } = usePlayer();

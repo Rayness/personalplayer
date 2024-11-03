@@ -1,5 +1,5 @@
 // PlayerContext.js
-import React, { createContext, useContext, useState, useRef, Children } from "react";
+import React, { createContext, useContext, useState, useRef } from "react";
 
 // Создать контекст
 const PlayerContext = createContext();
