@@ -10,11 +10,20 @@ const updatePlayerInfo = (song) => {
     myAudio.src = song.audio;
 };
 
+const autoPlaySong = () => {
+    if (myAudio.currentTime == myAudio.duration) {
+        currentSongIndex = (currentSongIndex + 1) % songs.length;
+        playSong(songs[currentSongIndex]);
+    };
+};
+
 // Функция для обновления времени и прогресса
 myAudio.addEventListener("timeupdate", () => {
     const currentTime = myAudio.currentTime;
     const duration = myAudio.duration;
     const progress = (currentTime / duration) * 100;
+
+    autoPlaySong();
 
     // Обновление значения ползунка
     document.getElementById("progressSlider").value = progress;
@@ -136,6 +145,7 @@ const playSong = (song) => {
 
 const playNextSong = () => {
     currentSongIndex = (currentSongIndex + 1) % songs.length;
+    document.getElementById("play-pause").innerHTML = `<i class="fa-solid fa-pause">`;
     playSong(songs[currentSongIndex]);
 };
 

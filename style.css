@@ -8,11 +8,15 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
 }
 
 header {
+    min-width: none;
+    max-width: 80vw;
     width: 100%;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    border-radius: 20px;
     padding: 15px;
     background: rgba(255, 69, 0, 0.8); /* Красноватый оттенок с прозрачностью */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -40,18 +44,25 @@ header h2 {
     background: rgba(255, 255, 255, 0.2);
 }
 
+#content {
+    margin: auto;
+    width: 100%;
+    max-width: 40vw;
+}
+
 /* Стиль для списка треков */
 .songsWrapper {
-    width: 90%;
-    max-width: 800px;
+    width: 100%;
     margin: 20px 0;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 15px;
 }
 
 .song {
     display: flex;
+    flex: 1;
     align-items: center;
     padding: 10px;
     background: rgba(255, 255, 255, 0.1);
@@ -90,8 +101,9 @@ header h2 {
 .audio-player {
     position: fixed;
     bottom: 20px;
-    width: 90%;
-    max-width: 800px;
+    width: 100%;
+    min-width: 40vw;
+    max-width: 80vw;
     padding: 15px;
     background: rgba(255, 255, 255, 0.2);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -113,6 +125,15 @@ header h2 {
     margin-right: 15px;
 }
 
+.player__left {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-width: 0;
+    margin-right: 20px;
+}
+
 /* Информация о треке */
 .player__info {
     flex: 1;
@@ -125,6 +146,7 @@ header h2 {
 .player__info__title {
     font-size: 1.2em;
     font-weight: bold;
+    color: #ffd700;
     margin: 0;
     white-space: nowrap;
     overflow: hidden;
@@ -133,11 +155,18 @@ header h2 {
 
 .player__info__artist {
     font-size: 0.9em;
-    color: #ffd700;
     margin: 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+/* Общий блок кнопок и полосы прогресса */
+.player__center {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 /* Полоса прогресса и время */
@@ -145,8 +174,8 @@ header h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex: 3;
-    max-width: 400px;
+    flex: 1;
+    margin-top: 0.5vh;
 }
 
 #progressSlider {
@@ -181,8 +210,13 @@ header h2 {
 /* Управление громкостью */
 .player__volume {
     display: flex;
+    justify-content: flex-end;
     align-items: center;
     flex: 1;
+}
+
+.player__right {
+    right: 0;
 }
 
 #volumeSlider {
@@ -209,9 +243,10 @@ header h2 {
 
 /* Кнопки управления плеером */
 .player__control {
+    margin: auto;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
 }
 
 .player__control button {
@@ -220,7 +255,7 @@ header h2 {
     color: #fff;
     padding: 8px 15px;
     margin: 0 5px;
-    border-radius: 20px;
+    border-radius: 16px;
     cursor: pointer;
     font-size: 0.9em;
     transition: background 0.3s;
@@ -231,5 +266,28 @@ header h2 {
 }
 
 .player__control button:focus {
+    outline: none;
+}
+
+
+
+/* -------------------------------------------------- Дальше файл tracks --------------------------------- */
+
+
+.search {
+    width: 100%; /* Растягиваем input на всю ширину контейнера */
+    box-sizing: border-box; /* Учитываем отступы и границы в ширину */
+    border-radius: 4px; /* Закругленные углы */
+    padding: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    margin-bottom: 1vh;
+    transition: background 0.3s;
+}
+
+
+.search input {
+    width: 100%;
+    background: none;
+    border: none;
     outline: none;
 }
