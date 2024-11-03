@@ -1,6 +1,8 @@
 let songs = [];
 let currentSongIndex = 0;
 let myAudio = new Audio();
+myAudio.volume = localStorage.getItem('volume');
+
 
 // Функция для обновления информации в плеере
 const updatePlayerInfo = (song) => {
@@ -22,9 +24,10 @@ myAudio.addEventListener("timeupdate", () => {
     const currentTime = myAudio.currentTime;
     const duration = myAudio.duration;
     const progress = (currentTime / duration) * 100;
-
+    // Инициализация при загрузке страницы
+    
     autoPlaySong();
-
+    updateBackground();
     // Обновление значения ползунка
     document.getElementById("progressSlider").value = progress;
 
@@ -46,7 +49,6 @@ const loadTracksPage = async () => {
         const response = await fetch("tracks.html");
         const html = await response.text();
         document.getElementById("content").innerHTML = html;
-        
         getSongs(); // Загружаем песни после отображения страницы
     } catch (error) {
         console.error("Ошибка загрузки страницы с треками:", error);
@@ -162,6 +164,32 @@ const togglePlayPause = () => {
         myAudio.pause();
     }
 };
+
+// Изменение цвета вслед за точкой на временной шкале
+const rangeInput = document.getElementById('progressSlider');
+
+// Функция для обновления значения кастомного свойства CSS
+function updateBackground() {
+    const value = rangeInput.value;
+    const min = rangeInput.min ? rangeInput.min : 0;
+    const max = rangeInput.max ? rangeInput.max : 100;
+    const percentage = (value - min) / (max - min) * 100;
+
+    rangeInput.addEventListener('mousedown', function () {
+        rangeInput.style.setProperty('--thumb-width', '10px');
+    })
+
+    rangeInput.addEventListener('mouseup', function () {
+        rangeInput.style.setProperty('--thumb-width', '0px');
+    })
+
+    rangeInput.style.setProperty('--value', `${percentage}%`);
+}
+
+
+
+
+
 
 // Загрузка страницы с треками при нажатии на ссылку
 document.addEventListener("click", (e) => {

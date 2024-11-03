@@ -188,17 +188,25 @@ header h2 {
     width: 100%;
     margin: 0 10px;
     cursor: pointer;
+    transition: border 0.3s;
 }
+
+#progressSlider::-webkit-slider-runnable-track {
+    background: linear-gradient(to right, #FF5733 0%, #FF5733 var(--value, 50%), #ddd var(--value, 50%), #ddd 100%);
+    border-radius: 5px;
+}
+
 
 #progressSlider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 12px;
-    height: 12px;
+    width: 0px;
+    height: 8px;
     background: #FF5733;
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    transition: width 0.3s, height 0.3s;
 }
 
 .player__progress span {
@@ -285,7 +293,8 @@ header h2 {
 }
 
 
-.search input {
+.search input{
+    appearance: none;
     width: 100%;
     background: none;
     border: none;
