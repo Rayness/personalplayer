@@ -383,5 +383,33 @@
     "artist": "Bahari",
     "audio": "uploads/media/Bahari_-_Savage.mp3",
     "cover": "https://lastfm.freetls.fastly.net/i/u/ar0/f7319a8dfcb2932f065ed34263ce7062.jpg"
+  },
+  {
+    "id": 490228,
+    "title": "Yofukashino Uta",
+    "artist": "Creepy Nuts",
+    "audio": "uploads/media/Creepy_Nuts_-_Yofukashino_Uta.mp3",
+    "cover": "https://cdn-image.zvuk.com/pic?type=release&id=11151184&size=300x300&hash=b3064b6f-5ea0-45dd-bd7d-d520df72da03"
+  },
+  {
+    "id": 489774,
+    "title": "Hayloft II",
+    "artist": "Mother Mother",
+    "audio": "uploads/media/Mother_Mother_-_Hayloft_II.mp3",
+    "cover": "https://cdn-image.zvuk.com/pic?type=release&id=22125952&size=400x400&hash=09507c10-537c-41f1-b786-4c6a56f2a884"
+  },
+  {
+    "id": 251677,
+    "title": "IDOL",
+    "artist": "YOASOBI",
+    "audio": "uploads/media/YOASOBI_-_IDOL.mp3",
+    "cover": "https://upload.wikimedia.org/wikipedia/ru/thumb/3/35/Idol-yoasobi.jpg/1200px-Idol-yoasobi.jpg"
+  },
+  {
+    "id": 960084,
+    "title": "Yuusha",
+    "artist": "YOASOBI",
+    "audio": "uploads/media/YOASOBI_Official_Music_Video_TV.mp3",
+    "cover": "https://sun9-12.userapi.com/s/v1/ig2/1pWeH9tXwkjpaynJFDR4opnI3OSDf3QL6cTXoC0R6AxGE9jKD75WAbstrS-DyPmqDXlTKXL0B0qaCQF6sqwAe_pK.jpg?quality=96&as=32x48,48x72,72x109,108x163,160x242,240x362,360x544,480x725,540x816,640x967,720x1087,1080x1631,1280x1933,1356x2048&from=bu&u=zuEFWghv_k0ENDbNAty1SjwXbnUI1TeZUVw60HubRQI&cs=534x807"
   }
 ]
