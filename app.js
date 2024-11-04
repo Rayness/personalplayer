@@ -3,11 +3,20 @@ let currentSongIndex = 0;
 let myAudio = new Audio();
 myAudio.volume = localStorage.getItem('volume');
 
+console.log(songs.length);
+
+
+const canvas = document.getElementById("visualizer");
+const audioFileInput = myAudio.src;
+const audioContext = new (window.AudioContext || window.AudioContext)();
+
+
+
 
 // Функция для обновления информации в плеере
 const updatePlayerInfo = (song) => {
     document.querySelector(".player__cover_img").src = song.cover;
-    document.querySelector(".player__info__title").textContent = song.name;
+    document.querySelector(".player__info__title").textContent = song.title;
     document.querySelector(".player__info__artist").textContent = song.artist;
     myAudio.src = song.audio;
 };
@@ -25,6 +34,7 @@ myAudio.addEventListener("timeupdate", () => {
     const duration = myAudio.duration;
     const progress = (currentTime / duration) * 100;
     // Инициализация при загрузке страницы
+    
     
     autoPlaySong();
     updateBackground();
@@ -55,13 +65,134 @@ const loadTracksPage = async () => {
     }
 };
 
+const loadVisualizerPage = async () => {
+    try {
+        const response = await fetch("visualizer.html");
+        const html = await response.text();
+        document.getElementById("content").innerHTML = html;
+    } catch (error) {
+        console.error("Ошибка загрузки страницы с визуализатором:", error);
+    }
+};
+
+const loadAddSongsPage = async () => {
+    try {
+        const response = await fetch("add-songs.html");
+        const html = await response.text();
+        document.getElementById("content").innerHTML = html;
+        AddNewSongs();
+    } catch (error) {
+        console.error("Ошибка загрузки страницы добавления новых треков:", error);
+    }
+};
+
+
+
+
+
+// Добавление новой песни
+const AddNewSongs = () => {
+    document.getElementById('uploadForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const title = document.getElementById('title').value;
+        const artist = document.getElementById('artist').value;
+        const audioFile = document.getElementById('audio').files[0];
+        const cover = document.getElementById('cover').value;
+
+        const formData = new FormData();
+        formData.append('title', title);
+        formData.append('artist', artist);
+        formData.append('audio', audioFile);
+        formData.append('cover', cover);
+
+        fetch('http://127.0.0.1:5000/upload', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('message').innerText = data.message;
+        })
+        .catch((error) => {
+            document.getElementById('message').innerText = 'Error: ' + error.message;
+        });
+        console.log('Информация отправлена', formData);
+        
+    });
+};
+
+// Конец
+
+
+
+
+
+
+
+// // ВИЗУАЛИЗАТОР
+
+// function startVisualizer (VisualizerAudio, audioContext) {
+//     // Отключаем предыдущий источник, если он существует
+//     if (currentSource) {
+//         currentSource.disconnect();
+//     }
+
+//     const analyser = audioContext.createAnalyser();
+//     analyser.fftSize = 256;
+
+//     // Создаем новый источник для VisualizerAudio
+//     currentSource = audioContext.createMediaElementSource(VisualizerAudio);
+//     currentSource.connect(analyser);
+//     analyser.connect(audioContext.destination);
+
+//     const canvas = document.getElementById("visualizerCanvas");
+//     const ctx = canvas.getContext("2d");
+
+//     function renderFrame() {
+//         requestAnimationFrame(renderFrame);
+//         const bufferLength = analyser.frequencyBinCount;
+//         const dataArray = new Uint8Array(bufferLength);
+
+//         analyser.getByteFrequencyData(dataArray);
+
+//         ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+//         const barWidth = (canvas.width / bufferLength) * 2.5;
+//         let x = 0;
+
+//         dataArray.forEach((value) => {
+//             const barHeight = value / 2;
+//             ctx.fillStyle = `rgb(${value + 100}, 50, 150)`;
+//             ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
+//             x += barWidth + 1;
+//         });
+//     }
+//     console.log('Визуализатор работает');
+    
+//     renderFrame();
+// }
+
+// // КОНЕЦ ЦКОДА ВИЗУАЛИЗАТОРА
+
+
+
+
+
+
+
+
 // Подгружаем песни из JSON
 const getSongs = async () => {
     try {
-        const response = await fetch("songs.json");
-        songs = await response.json();
-        renderSongs(songs);
-        updatePlayerInfo(songs[currentSongIndex]); // Устанавливаем начальный трек
+        if (songs.length === 0) {
+            const response = await fetch("../uploads/songs.json");
+            songs = await response.json();
+            renderSongs(songs);
+            updatePlayerInfo(songs[currentSongIndex]); // Устанавливаем начальный трек
+        } else {
+            renderSongs(songs);
+        }
     } catch (error) {
         console.error("Ошибка загрузки песен:", error);
     }
@@ -74,7 +205,7 @@ const renderSongs = (songs) => {
         <div class="song" data-index="${index}">
             <img src="${song.cover}" alt="cover">
             <div>
-                <h3>${song.name}</h3>
+                <h3>${song.name || song.title}</h3>
                 <h4>${song.artist}</h4>
             </div>
         </div>
@@ -92,7 +223,7 @@ const renderSongs = (songs) => {
 const sortSongs = (criterion) => {
     songs.sort((a, b) => {
         if (criterion === "name") {
-            return a.name.localeCompare(b.name);
+            return a.title.localeCompare(b.title);
         } else if (criterion === "artist") {
             return a.artist.localeCompare(b.artist);
         } else if (criterion === "id") {
@@ -113,7 +244,7 @@ document.addEventListener("change", (event) => {
 // Функция для поиска песен по запросу
 const searchSongs = (query) => {
     const filteredSongs = songs.filter(song =>
-        song.name.toLowerCase().includes(query.toLowerCase()) ||
+        song.title.toLowerCase().includes(query.toLowerCase()) ||
         song.artist.toLowerCase().includes(query.toLowerCase())
     );
     renderSongs(filteredSongs); // Перерисовываем список с отфильтрованными песнями
@@ -147,7 +278,6 @@ const playSong = (song) => {
 
 const playNextSong = () => {
     currentSongIndex = (currentSongIndex + 1) % songs.length;
-    document.getElementById("play-pause").innerHTML = `<i class="fa-solid fa-pause">`;
     playSong(songs[currentSongIndex]);
 };
 
@@ -160,7 +290,9 @@ const playPreviousSong = () => {
 const togglePlayPause = () => {
     if (myAudio.paused) {
         myAudio.play();
+        document.getElementById("play-pause").innerHTML = `<i class="fa-solid fa-pause">`
     } else {
+        document.getElementById("play-pause").innerHTML = `<i class="fa-solid fa-play">`;
         myAudio.pause();
     }
 };
@@ -187,10 +319,6 @@ function updateBackground() {
 }
 
 
-
-
-
-
 // Загрузка страницы с треками при нажатии на ссылку
 document.addEventListener("click", (e) => {
     if (e.target.matches(".nav-link-tracks")) {
@@ -198,3 +326,20 @@ document.addEventListener("click", (e) => {
         loadTracksPage();
     }
 });
+
+// Загрузка страницы с треками при нажатии на ссылку
+document.addEventListener("click", (e) => {
+    if (e.target.matches(".nav-link-visualizer")) {
+        e.preventDefault();
+        loadVisualizerPage();
+    }
+});
+
+// Загрузка страницы с треками при нажатии на ссылку
+document.addEventListener("click", (e) => {
+    if (e.target.matches(".nav-link-add-songs")) {
+        e.preventDefault();
+        loadAddSongsPage();
+    }
+});
+

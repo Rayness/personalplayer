@@ -322,9 +322,9 @@
     ,
     {
         "id" : 45,
-        "cover" : "",
-        "artist" : "",
-        "name" : "",
-        "audio" : ""
+        "cover" : "https://i.ytimg.com/vi/ylIB_Sqm8YM/maxresdefault.jpg",
+        "artist" : "pyrokinesis",
+        "name" : "Легенда о богине Мечей",
+        "audio" : "/media/pyrokinesis - Легенда о Богине Мечей.mp3"
     }
 ]

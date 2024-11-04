@@ -1,0 +1,387 @@
+[
+  {
+    "id": 1,
+    "cover": "https://repository-images.githubusercontent.com/415407744/50faf33c-1ed7-4b37-be52-bde9decae2c9",
+    "artist": "RIOT",
+    "title": "Overkill",
+    "audio": "uploads/media/RIOT - Overkill.mp3"
+  },
+  {
+    "id": 2,
+    "cover": "https://avatars.mds.yandex.net/i?id=1860210a460d55628ad54c38cb0115b8_l-9783932-images-thumbs&n=13",
+    "artist": "Ado",
+    "title": "Show",
+    "audio": "uploads/media/Ado - Show.mp3"
+  },
+  {
+    "id": 3,
+    "cover": "https://images.genius.com/8daaaa0c73899597c9ff7e0e66b84f13.1000x1000x1.png",
+    "artist": "Ado",
+    "title": "Usseewa",
+    "audio": "uploads/media/Ado - Usseewa.mp3"
+  },
+  {
+    "id": 4,
+    "cover": "https://images.genius.com/57d901243d411351ca34035064a3f608.1000x1000x1.jpg",
+    "artist": "BABYMETAL",
+    "title": "BxMxC",
+    "audio": "uploads/media/BABYMETAL - BxMxC.mp3"
+  },
+  {
+    "id": 5,
+    "cover": "https://upload.wikimedia.org/wikipedia/ru/1/12/Babymetal_Divine_Attack_single_cover.jpg",
+    "artist": "BABYMETAL",
+    "title": "Divine Attack - Shingeki",
+    "audio": "uploads/media/BABYMETAL - Divine Attack - Shingeki.mp3"
+  },
+  {
+    "id": 6,
+    "cover": "https://i.ytimg.com/vi/9XGXzmz53uY/maxresdefault.jpg",
+    "artist": "BABYMETAL",
+    "title": "Karate",
+    "audio": "uploads/media/BABYMETAL - Karate.mp3"
+  },
+  {
+    "id": 7,
+    "cover": "https://avatars.yandex.net/get-music-content/163479/6bd01cd7.a.7797117-1/m1000x1000?webp=false",
+    "artist": "BABYMETAL feat. F.HERO",
+    "title": "PA PA YA!!",
+    "audio": "uploads/media/BABYMETAL feat. F.HERO - PA PA YA!!.mp3"
+  },
+  {
+    "id": 8,
+    "cover": "https://tyumen.pult.ru/upload/iblock/19a/19a55d576dbf62be1b8f1b4af7086048.jpg",
+    "artist": "BABYMETAL feat. Joakim Brodén",
+    "title": "Oh! MAJINAI",
+    "audio": "uploads/media/BABYMETAL feat. Joakim Brodén - Oh! MAJINAI.mp3"
+  },
+  {
+    "id": 9,
+    "cover": "https://upload.wikimedia.org/wikipedia/ru/5/5a/BadOmens_TDOPOM.jpg",
+    "artist": "Bad Omens",
+    "title": "THE DEATH OF PEACE OF MIND",
+    "audio": "uploads/media/Bad Omens - THE DEATH OF PEACE OF MIND.mp3"
+  },
+  {
+    "id": 10,
+    "cover": "https://avatars.yandex.net/get-music-content/118603/8b6699e3.a.7787365-1/m1000x1000?webp=false",
+    "artist": "Hidden Citizens feat. Rånya",
+    "title": "Paint It Black",
+    "audio": "uploads/media/Hidden Citizens feat. Rånya - Paint It Black.mp3"
+  },
+  {
+    "id": 11,
+    "cover": "https://avatars.mds.yandex.net/get-marketpic/5962532/pic6432852efa7e9f3c6d103d9cafc22f0b/orig",
+    "artist": "Louna",
+    "title": "Полюса",
+    "audio": "uploads/media/Louna - Полюса.mp3"
+  },
+  {
+    "id": 12,
+    "cover": "https://avatars.yandex.net/get-music-content/108289/e482d95e.a.8112870-1/m1000x1000?webp=false",
+    "artist": "MIYAVI",
+    "title": "Other Side",
+    "audio": "uploads/media/MIYAVI - Other Side.mp3"
+  },
+  {
+    "id": 13,
+    "cover": "https://avatars.yandex.net/get-music-content/4010467/36fe1a48.a.17779951-1/m1000x1000?webp=false",
+    "artist": "pyrokinesis",
+    "title": "Легенда о Богине Гроз",
+    "audio": "uploads/media/pyrokinesis - Легенда о Богине Гроз.mp3"
+  },
+  {
+    "id": 14,
+    "cover": "https://cdn1.ozone.ru/s3/multimedia-m/6600598942.jpg",
+    "artist": "Rammstein",
+    "title": "Sonne",
+    "audio": "uploads/media/Rammstein - Sonne.mp3"
+  },
+  {
+    "id": 15,
+    "cover": "https://avatars.yandex.net/get-music-content/4384958/1ed003ad.a.16201558-1/m1000x1000?webp=false",
+    "artist": "RAVANNA",
+    "title": "Жги",
+    "audio": "uploads/media/RAVANNA - Жги.mp3"
+  },
+  {
+    "id": 16,
+    "cover": "https://i.ytimg.com/vi/BnK_V_yjy2E/maxresdefault.jpg",
+    "artist": "RAVANNA feat. Ai Mori",
+    "title": "Кома",
+    "audio": "uploads/media/RAVANNA feat. Ai Mori - Кома.mp3"
+  },
+  {
+    "id": 17,
+    "cover": "https://avatars.yandex.net/get-music-content/28589/eba28764.a.3104937-1/m1000x1000?webp=false",
+    "artist": "Eurielle",
+    "title": "City of the dead",
+    "audio": "uploads/media/Eurielle - City of the dead.mp3"
+  },
+  {
+    "id": 18,
+    "cover": "https://res.cloudinary.com/epitaph/image/upload/h_925,w_925/v1/epitaph/releases/88888-X_FallingInReverse_Zombified",
+    "artist": "Falling In Reverse",
+    "title": "ZOMBIFIED",
+    "audio": "uploads/media/Falling In Reverse - ZOMBIFIED.mp3"
+  },
+  {
+    "id": 19,
+    "cover": "https://images.genius.com/e61a18e39814f6dd49f65fcb0e198f40.1000x1000x1.jpg",
+    "artist": "FIZICA",
+    "title": "Готэм 2",
+    "audio": "uploads/media/FIZICA - Готэм 2.mp3"
+  },
+  {
+    "id": 20,
+    "cover": "https://images.genius.com/e61a18e39814f6dd49f65fcb0e198f40.1000x1000x1.jpg",
+    "artist": "FIZICA",
+    "title": "Готэм 3",
+    "audio": "uploads/media/FIZICA - Готэм 3.mp3"
+  },
+  {
+    "id": 21,
+    "cover": "https://images.genius.com/e61a18e39814f6dd49f65fcb0e198f40.1000x1000x1.jpg",
+    "artist": "FIZICA",
+    "title": "Готэм",
+    "audio": "uploads/media/FIZICA - Готэм.mp3"
+  },
+  {
+    "id": 22,
+    "cover": "https://images.genius.com/e61a18e39814f6dd49f65fcb0e198f40.1000x1000x1.jpg",
+    "artist": "FIZICA",
+    "title": "Чокер",
+    "audio": "uploads/media/FIZICA - Чокер.mp3"
+  },
+  {
+    "id": 23,
+    "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/ab/8c/13/ab8c1397-5cf9-b078-b797-70229a4303e3/cover.jpg/600x600bf-60.jpg",
+    "artist": "GroTTesque",
+    "title": "Стальное сердце",
+    "audio": "uploads/media/GroTTesque - Стальное сердце.mp3"
+  },
+  {
+    "id": 24,
+    "cover": "https://i.scdn.co/image/ab67616d0000b273b03ce145dfc370474ce2757a",
+    "artist": "Halestorm",
+    "title": "I Miss The Misery",
+    "audio": "uploads/media/Halestorm - I Miss The Misery.mp3"
+  },
+  {
+    "id": 25,
+    "cover": "https://static.wikia.nocookie.net/halsey/images/6/67/Badlands_Album_Cover.png",
+    "artist": "Halsey",
+    "title": "Control",
+    "audio": "uploads/media/Halsey - Control.mp3"
+  },
+  {
+    "id": 26,
+    "cover": "https://cdns-images.dzcdn.net/images/cover/02c28dce05f4590e812c43f3f17d8e49/0x1900-000000-80-0-0.jpg",
+    "artist": "Hidden Citizens feat. Keeley Bumford",
+    "title": "Immortalized",
+    "audio": "uploads/media/Hidden Citizens feat. Keeley Bumford - Immortalized.mp3"
+  },
+  {
+    "id": 27,
+    "cover": "https://t2.genius.com/unsafe/1249x0/https%3A%2F%2Fimages.genius.com%2Fa636627b58d07ad23513b2047cc3cea2.1000x1000x1.jpg",
+    "artist": "Hidden Citizens feat. Rånya",
+    "title": "Let Me Out",
+    "audio": "uploads/media/Hidden Citizens feat. Rånya - Let Me Out.mp3"
+  },
+  {
+    "id": 28,
+    "cover": "https://avatars.yandex.net/get-music-content/10930741/8f124fe5.a.29590705-1/m1000x1000?webp=false",
+    "artist": "Ado",
+    "title": "Unravel",
+    "audio": "uploads/media/Ado - Unravel.mp3"
+  },
+  {
+    "id": 29,
+    "cover": "https://avatars.mds.yandex.net/i?id=39a8810483883253ccfbe3488aa79845_l-4553678-images-thumbs&n=13",
+    "artist": "Ado",
+    "title": "Odo",
+    "audio": "uploads/media/Ado - Odo.mp3"
+  },
+  {
+    "id": 30,
+    "cover": "https://static.wikia.nocookie.net/nana/images/4/4e/Rose.jpg",
+    "artist": "ANNA TSUCHIYA",
+    "title": "Rose",
+    "audio": "uploads/media/ANNA TSUCHIYA - Rose.mp3"
+  },
+  {
+    "id": 31,
+    "cover": "https://cdns-images.dzcdn.net/images/cover/5489ee19bd016cfb2067082274fd3367/0x1900-000000-80-0-0.jpg",
+    "artist": "Asper X",
+    "title": "Bad Trip",
+    "audio": "uploads/media/Asper X - Bad Trip.mp3"
+  },
+  {
+    "id": 32,
+    "cover": "https://avatars.yandex.net/get-music-content/5678677/0c73458f.a.21314673-1/m1000x1000?webp=false",
+    "artist": "SKYND",
+    "title": "Chris Watts",
+    "audio": "uploads/media/SKYND - Chris Watts.mp3"
+  },
+  {
+    "id": 33,
+    "cover": "https://lastfm.freetls.fastly.net/i/u/ar0/695fbe26f80c429dc8ece78a185d9161.jpg",
+    "artist": "SKYND",
+    "title": "Elisa Lam",
+    "audio": "uploads/media/SKYND - Elisa Lam.mp3"
+  },
+  {
+    "id": 34,
+    "cover": "https://avatars.mds.yandex.net/i?id=eeecd5da9af4722fca7c7e9f04b020b6_l-8174327-images-thumbs&n=13",
+    "artist": "SKYND",
+    "title": "Jim Jones",
+    "audio": "uploads/media/SKYND - Jim Jones(2019).mp3"
+  },
+  {
+    "id": 35,
+    "cover": "https://avatars.yandex.net/get-music-content/139444/8f8cb75a.a.7911606-2/m1000x1000?webp=false",
+    "artist": "SKYND",
+    "title": "Katherine Knight",
+    "audio": "uploads/media/SKYND - Katherine Knight.mp3"
+  },
+  {
+    "id": 36,
+    "cover": "https://avatars.yandex.net/get-music-content/139444/8f8cb75a.a.7911606-2/m1000x1000?webp=false",
+    "artist": "SKYND",
+    "title": "Lay down your life",
+    "audio": "uploads/media/SKYND - Lay down your life.mp3"
+  },
+  {
+    "id": 37,
+    "cover": "https://avatars.yandex.net/get-music-content/4581417/d46e0552.a.15349549-1/m1000x1000?webp=false",
+    "artist": "SKYND",
+    "title": "Michelle Carter",
+    "audio": "uploads/media/SKYND - Michelle Carter.mp3"
+  },
+  {
+    "id": 38,
+    "cover": "https://avatars.yandex.net/get-music-content/149669/26c23a6e.a.5511746-1/m1000x1000?webp=false",
+    "artist": "SKYND",
+    "title": "Richard Ramirez",
+    "audio": "uploads/media/SKYND - Richard Ramirez.mp3"
+  },
+  {
+    "id": 39,
+    "cover": "https://avatars.yandex.net/get-music-content/139444/8f8cb75a.a.7911606-2/m1000x1000?webp=false",
+    "artist": "SKYND",
+    "title": "Tyler Hadley",
+    "audio": "uploads/media/SKYND - Tyler Hadley.mp3"
+  },
+  {
+    "id": 40,
+    "cover": "https://i.ytimg.com/vi/dWW2zXUOIC0/maxresdefault.jpg",
+    "artist": "Norma Tale",
+    "title": "Кисточка II",
+    "audio": "uploads/media/Norma Tale - Кисточка II.mp3"
+  },
+  {
+    "id": 41,
+    "cover": "https://i.scdn.co/image/ab67616d0000b2731724b0cef6a23963d21c3b8a",
+    "artist": "Creepy Nuts",
+    "title": "オトノケ(Otonoke)",
+    "audio": "uploads/media/Creepy Nuts - オトノケ(Otonoke).mp3"
+  },
+  {
+    "id": 42,
+    "cover": "https://i.ytimg.com/vi/hNjeAnwGhzc/hqdefault.jpg",
+    "artist": "Apashe ft. Vo Williams",
+    "title": "Work",
+    "audio": "uploads/media/Apashe - Work (ft. Vo Williams).mp3"
+  },
+  {
+    "id": 43,
+    "cover": "https://i.ytimg.com/vi/mvzdWgfG1vM/maxresdefault.jpg",
+    "artist": "blueberry",
+    "title": "EVA 3",
+    "audio": "uploads/media/blueberry - EVA 3.mp3"
+  },
+  {
+    "id": 44,
+    "cover": "https://i.ytimg.com/vi/FWBjzQnDb8o/maxresdefault.jpg",
+    "artist": "Animadrop",
+    "title": "Stuck in a Timeloop",
+    "audio": "uploads/media/Animadrop - Stuck in a Timeloop.mp3"
+  },
+  {
+    "id": 45,
+    "cover": "https://i.ytimg.com/vi/ylIB_Sqm8YM/maxresdefault.jpg",
+    "artist": "pyrokinesis",
+    "title": "Легенда о богине Мечей",
+    "audio": "uploads/media/pyrokinesis - Легенда о Богине Мечей.mp3"
+  },
+  {
+    "id": 482708,
+    "title": "Snow Drive",
+    "artist": "Araki",
+    "audio": "uploads/media/Araki_-_Snow_Drive_.mp3",
+    "cover": "https://i.ytimg.com/vi/9w1rsWrzBwY/maxresdefault.jpg"
+  },
+  {
+    "id": 942880,
+    "title": "Teo",
+    "artist": "Omoi",
+    "audio": "uploads/media/Omoi_-_Teo.mp3",
+    "cover": "https://i.ytimg.com/vi/bmkY2yc1K7Q/maxresdefault.jpg"
+  },
+  {
+    "id": 667995,
+    "title": "Teo",
+    "artist": "Araki",
+    "audio": "uploads/media/Araki_-_Teo.mp3",
+    "cover": "https://i.ytimg.com/vi/WysJSFW0LU8/maxresdefault.jpg"
+  },
+  {
+    "id": 190369,
+    "title": "I pray",
+    "artist": "Denkare",
+    "audio": "uploads/media/Denkare_-_I_pray.mp3",
+    "cover": "https://i.ytimg.com/vi/mUARzh2zHDo/maxresdefault.jpg"
+  },
+  {
+    "id": 816639,
+    "title": "Amore",
+    "artist": "BABYMETAL",
+    "audio": "uploads/media/BABYMETAL_-_05._Amore.mp3",
+    "cover": "https://i.ytimg.com/vi/uD4QJyWqUiE/maxresdefault.jpg"
+  },
+  {
+    "id": 962785,
+    "title": "Storytellers",
+    "artist": "Foreground Eclipse",
+    "audio": "uploads/media/Foreground_Eclipse_-_Storytellers.mp3",
+    "cover": "https://i.ytimg.com/vi/FMvD0-K-hoI/maxresdefault.jpg"
+  },
+  {
+    "id": 719505,
+    "title": "Реванш",
+    "artist": "LASCALA",
+    "audio": "uploads/media/LASCALA_-_.mp3",
+    "cover": "https://i.ytimg.com/vi/epSHdRWHxG4/maxresdefault.jpg"
+  },
+  {
+    "id": 759704,
+    "title": "How you like that",
+    "artist": "BLACKPINK",
+    "audio": "uploads/media/BLACKPINK_-_How_You_Like_That.mp3",
+    "cover": "https://cokodive.com/cdn/shop/products/apple-music-blackpink-special-edition-how-you-like-that-15622046023760_1600x.jpg?v=1628411100"
+  },
+  {
+    "id": 194647,
+    "title": "Revive",
+    "artist": "UNIONE",
+    "audio": "uploads/media/UNIONE_-_Revive.mp3",
+    "cover": "https://cdns-images.dzcdn.net/images/cover/2bab47ee78b6cad51c5634e89518e99a/0x1900-000000-80-0-0.jpg"
+  },
+  {
+    "id": 398316,
+    "title": "Savege",
+    "artist": "Bahari",
+    "audio": "uploads/media/Bahari_-_Savage.mp3",
+    "cover": "https://lastfm.freetls.fastly.net/i/u/ar0/f7319a8dfcb2932f065ed34263ce7062.jpg"
+  }
+]
