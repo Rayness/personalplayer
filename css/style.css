@@ -1,0 +1,303 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #FF5733, #FFC300);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    min-width: none;
+    max-width: 80vw;
+    width: 100%;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    border-radius: 20px;
+    padding: 15px;
+    background: rgba(255, 69, 0, 0.8); /* Красноватый оттенок с прозрачностью */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+header h2 {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin: 0;
+}
+
+.menu a {
+    color: #fff;
+    margin: 0 15px;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 20px;
+    transition: background 0.3s;
+}
+
+.menu a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+#content {
+    margin: auto;
+    width: 100%;
+    max-width: 40vw;
+}
+
+/* Стиль для списка треков */
+.songsWrapper {
+    width: 100%;
+    margin: 20px 0;
+    margin-bottom: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.song {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.song:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.song img {
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.song h3 {
+    font-size: 1.1em;
+    margin: 0;
+    color: #ffd700;
+}
+
+.song h4 {
+    font-size: 0.9em;
+    margin: 0;
+    color: #fff;
+    opacity: 0.8;
+}
+
+/* Стиль аудиоплеера */
+.audio-player {
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    min-width: 40vw;
+    max-width: 80vw;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+}
+
+/* Обложка трека в плеере */
+.player__cover_img {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    margin-right: 15px;
+}
+
+.player__left {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-width: 0;
+    margin-right: 20px;
+}
+
+/* Информация о треке */
+.player__info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    margin-right: 20px;
+}
+
+.player__info__title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ffd700;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.player__info__artist {
+    font-size: 0.9em;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Общий блок кнопок и полосы прогресса */
+.player__center {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Полоса прогресса и время */
+.player__progress {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    margin-top: 0.5vh;
+}
+
+#progressSlider {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    outline: none;
+    width: 100%;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: border 0.3s;
+}
+
+#progressSlider::-webkit-slider-runnable-track {
+    background: linear-gradient(to right, #FF5733 0%, #FF5733 var(--value, 50%), #ddd var(--value, 50%), #ddd 100%);
+    border-radius: 5px;
+}
+
+
+#progressSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 0px;
+    height: 8px;
+    background: #FF5733;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    transition: width 0.3s, height 0.3s;
+}
+
+.player__progress span {
+    font-size: 0.8em;
+    min-width: 35px;
+    text-align: center;
+}
+
+/* Управление громкостью */
+.player__volume {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1;
+}
+
+.player__right {
+    right: 0;
+}
+
+#volumeSlider {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    outline: none;
+    width: 80px;
+    cursor: pointer;
+}
+
+#volumeSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    background: #FF5733;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Кнопки управления плеером */
+.player__control {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.player__control button {
+    background: rgba(255, 87, 51, 0.8);
+    border: none;
+    color: #fff;
+    padding: 8px 15px;
+    margin: 0 5px;
+    border-radius: 16px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background 0.3s;
+}
+
+.player__control button:hover {
+    background: rgba(255, 87, 51, 1);
+}
+
+.player__control button:focus {
+    outline: none;
+}
+
+
+
+/* -------------------------------------------------- Дальше файл tracks --------------------------------- */
+
+
+.search {
+    width: 100%; /* Растягиваем input на всю ширину контейнера */
+    box-sizing: border-box; /* Учитываем отступы и границы в ширину */
+    border-radius: 4px; /* Закругленные углы */
+    padding: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    margin-bottom: 1vh;
+    transition: background 0.3s;
+}
+
+
+.search input{
+    appearance: none;
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+}

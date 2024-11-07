@@ -1,0 +1,132 @@
+:local {
+
+    /* Стиль аудиоплеера */
+    .player {
+        position: fixed;
+        bottom: 20px;
+        width: 100%;
+        min-width: 40vw;
+        max-width: 80vw;
+        padding: 15px;
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #fff;
+    }
+    
+    /* Обложка трека в плеере */
+    .coverImg {
+        width: 60px;
+        height: 60px;
+        border-radius: 10px;
+        object-fit: cover;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        margin-right: 15px;
+    }
+    
+    .info {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        min-width: 0;
+        margin-right: 20px;
+    }
+    
+    /* Информация о треке */
+    .text {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        margin-right: 20px;
+    }
+    
+    .title {
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #ffd700;
+        margin: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    .artist {
+        font-size: 0.9em;
+        margin: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    /* Кнопки управления плеером */
+    .control {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    .controlButtons {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    .controlPrev,
+    .controlPlay,
+    .controlNext {
+        background: rgba(255, 87, 51, 0.8);
+        border: none;
+        color: #fff;
+        padding: 8px 15px;
+        margin: 0 5px;
+        border-radius: 16px;
+        cursor: pointer;
+        font-size: 0.9em;
+        transition: background 0.3s;
+    }
+    
+    .controlPrev:hover,
+    .controlPlay:hover,
+    .controlNext:hover {
+        background: rgba(255, 87, 51, 1);
+    }
+    
+    .controlPrev:focus,
+    .controlPlay:focus,
+    .controlNext:focus {
+        outline: none;
+    }
+    
+    .controlDuration {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .controlDuration1,
+    .controlDuration2 {
+        font-size: 0.8em;
+        min-width: 35px;
+        text-align: center;
+    }
+    
+    .playerControlDurationScroll {
+        flex: 1;
+    }
+    
+    .controlVolume {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex: 1;
+    }
+    
+    }

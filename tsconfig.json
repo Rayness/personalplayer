@@ -1,0 +1,19 @@
+{
+	"compilerOptions": {
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"outDir": "dist",
+		"module": "esNext",
+		"target": "es2015",
+		"lib": ["es5", "es6", "es7", "es2017", "dom"],
+		"sourceMap": true,
+		"moduleResolution": "node",
+		"baseUrl": "src",
+		"skipLibCheck": true,
+		"declaration": true,
+		"declarationDir": "./dist/types",
+		"jsx": "react"
+	},
+	"include": ["src", "typeScript"],
+	"exclude": ["node_modules", "dist/"]
+}
