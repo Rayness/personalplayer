@@ -1,0 +1,60 @@
+.all {
+    justify-items: center;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    padding-bottom: 5vh;
+    padding-top: 4vh;
+    color: white;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+}
+
+.mainForm {
+    margin: auto;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input__text {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 4px;
+    background:  rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    border: none;
+    height: 2vh;
+    margin-top: 1vh;
+}
+
+.input__upload {
+    border-radius: 4px;
+    background:  none;
+    border: none;
+    height: 2vh;
+    margin-top: 1vh;
+}
+
+.input__upload::-webkit-file-upload-button {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    border-radius: 4;
+    height: 2vh;
+    border: none;
+    margin-right: 2vh;
+}
+
+.btn__submit {
+    margin-top: 1vh;
+    -webkit-appearance: none;
+    appearance: none;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 4PX;
+    height: 2.2vh;
+    color: rgb(99, 97, 97);
+}

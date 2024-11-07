@@ -214,6 +214,7 @@ const renderSongs = (songs) => {
     document.querySelectorAll(".song").forEach((songElement) => {
         songElement.addEventListener("click", (e) => {
             currentSongIndex = parseInt(e.currentTarget.dataset.index);
+            document.getElementById("play-pause").innerHTML = `<i class="fa-solid fa-pause">`;
             playSong(songs[currentSongIndex]);
         });
     });

@@ -418,5 +418,26 @@
     "artist": "Mother Mother",
     "audio": "uploads/media/Mother_Mother_-_Hayloft_-_LastGangRadio_youtube.mp3",
     "cover": "https://lastfm.freetls.fastly.net/i/u/ar0/826cd46695ae445ca9db6ca7d694cdc0.jpg"
+  },
+  {
+    "id": 627635,
+    "title": "Skygall",
+    "artist": "Adele",
+    "audio": "uploads/media/Adele_Skyfall-original.mp3",
+    "cover": "https://avatars.yandex.net/get-music-content/2114230/0b7e42bb.a.8953684-1/m1000x1000?webp=false"
+  },
+  {
+    "id": 520568,
+    "title": "Ghost Rule",
+    "artist": "DECO_27",
+    "audio": "uploads/media/DECO_27_-_Ghost_Rule.mp3",
+    "cover": "https://i.ytimg.com/vi/PRFoBWsVXws/maxresdefault.jpg"
+  },
+  {
+    "id": 915302,
+    "title": "Zombie",
+    "artist": "Bad Wolves",
+    "audio": "uploads/media/Bad_Wolves_-_Zombie.mp3",
+    "cover": "https://lastfm.freetls.fastly.net/i/u/ar0/3a9968f93c6c64d0b888cbfec41c4cc9.jpg"
   }
 ]

@@ -1,14 +1,20 @@
+<head>
+    <link rel="stylesheet" href="add_songs.css">
+</head>
 <style>
     body { display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; background-color: #222; }
     canvas { border: 1px solid #fff; }
 </style>
-<h1>Добавление новой песни</h1>
-    <form id="uploadForm" enctype="multipart/form-data">
-        <input type="text" id="artist" placeholder="Имя исполнителя" required />
-        <input type="text" id="title" placeholder="Название песни" required />
-        <input type="file" id="audio" accept="audio/*" required />
-        <input type="text" id="cover" placeholder="Укажите ссылку на изображение" required />
-        <button type="submit">Загрузить</button>
-    </form>
-
+<div class="all">
+    <h1>Добавление новой песни</h1>
+        <form id="uploadForm" enctype="multipart/form-data">
+            <div class="mainForm">
+                <input class="input__text" type="text" id="artist" placeholder="Имя исполнителя" required />
+                <input class="input__text" type="text" id="title" placeholder="Название песни" required />
+                <input class="input__upload" type="file" id="audio" accept="audio/*" required />
+                <input class="input__text" type="text" id="cover" placeholder="Укажите ссылку на изображение" required />
+                <button class="btn__submit" type="submit">Загрузить</button>
+            </div>
+        </form>
     <div id="message"></div>
+</div>
