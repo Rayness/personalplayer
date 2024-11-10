@@ -37,9 +37,11 @@
       <div class="player__center">
         <!-- Кнопки управления -->
         <div class="player__control">
+          <button id="shuffle" onclick="btnShuffle()" class="sub__button"><i class="fa-solid fa-shuffle"></i></button>
           <button id="prev" onclick="playPreviousSong()"><i class="fa-solid fa-backward"></i></button>
           <button id="play-pause" onclick="togglePlayPause()"><i class="fa-solid fa-play"></i></button>
           <button id="next" onclick="playNextSong()"><i class="fa-solid fa-forward"></i></button>
+          <button id="repeat" onclick="btnRepeat()" class="sub__button"><i class="fa-solid fa-repeat"></i></button>
         </div>
         
         <!-- Ползунок прогресса и время -->
@@ -54,7 +56,7 @@
       <div class="player__volume">
           <div class="player__right">
             <label for="volumeSlider"><i class="fa-solid fa-volume-high"></i></label>
-            <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.1">
+            <input type="range" id="volumeSlider" min="0" max="0.5" step="0.01" value="0.1">
           </div>
       </div>
     </div>

@@ -278,7 +278,14 @@ body {
     outline: none;
 }
 
+.active {
+    background: rgba(255, 248, 55, 0.5) !important;
+    border: 1px solid black;
+}
 
+.active:hover {
+    background: rgba(255, 248, 55, 0.2) !important;
+}
 
 /* -------------------------------------------------- Дальше файл tracks --------------------------------- */
 

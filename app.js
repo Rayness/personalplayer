@@ -1,8 +1,12 @@
 let songs = [];
 let currentSongIndex = 0;
 let myAudio = new Audio();
+let songRepeat = false;
+let songShuffle = false;
+let originalSongs = [];
 myAudio.volume = localStorage.getItem('volume');
 
+console.log(songRepeat)
 console.log(songs.length);
 
 
@@ -21,10 +25,23 @@ const updatePlayerInfo = (song) => {
     myAudio.src = song.audio;
 };
 
+const shuffle = (array) => {
+    for (i = array.length - 1; i > 0; i--) {
+        const 
+        array = songs;j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+};
+
 const autoPlaySong = () => {
     if (myAudio.currentTime == myAudio.duration) {
-        currentSongIndex = (currentSongIndex + 1) % songs.length;
-        playSong(songs[currentSongIndex]);
+        if (songRepeat != true) {
+            currentSongIndex = (currentSongIndex + 1) % songs.length;
+            playSong(songs[currentSongIndex]);
+        } else {
+            playSong(songs[currentSongIndex]);
+        }
     };
 };
 
@@ -34,8 +51,7 @@ myAudio.addEventListener("timeupdate", () => {
     const duration = myAudio.duration;
     const progress = (currentTime / duration) * 100;
     // Инициализация при загрузке страницы
-    
-    
+
     autoPlaySong();
     updateBackground();
     // Обновление значения ползунка
@@ -85,10 +101,6 @@ const loadAddSongsPage = async () => {
         console.error("Ошибка загрузки страницы добавления новых треков:", error);
     }
 };
-
-
-
-
 
 // Добавление новой песни
 const AddNewSongs = () => {
@@ -210,7 +222,10 @@ const renderSongs = (songs) => {
             </div>
         </div>
     `).join("");
-
+    
+    shuffleSongs = songs;
+    console.log('в рендере', originalSongs, songs);
+    
     document.querySelectorAll(".song").forEach((songElement) => {
         songElement.addEventListener("click", (e) => {
             currentSongIndex = parseInt(e.currentTarget.dataset.index);
@@ -270,6 +285,41 @@ document.getElementById("volumeSlider").addEventListener("input", (event) => {
     myAudio.volume = event.target.value;
     localStorage.setItem('volume', myAudio.volume); // Сохраняем громкость
 });
+
+const playRepeatSong = () => {
+    if (repeat != true) {
+        repeat = true;
+    } else {
+        repeat = false;
+    }
+    return repeat;
+};
+
+const btnRepeat = () => {
+    const button = document.getElementById('repeat');
+    button.classList.toggle('active');
+    songRepeat = playRepeatSong();
+};
+
+const playShuffleSong = () => {
+    if (songShuffle != true) {
+        shuffle(songs);
+        songShuffle = true;
+        console.log(songs);
+        console.log('Правда', originalSongs);
+    } else {
+        songs = originalSongs;
+        songShuffle = false;
+        console.log('ложь', songs);
+    }
+}
+
+const btnShuffle = () => {
+    const button = document.getElementById('shuffle');
+    button.classList.toggle('active');
+    console.log('Перемешка', songShuffle);
+    
+};
 
 // Управление плеером
 const playSong = (song) => {
