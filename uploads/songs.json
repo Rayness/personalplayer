@@ -446,5 +446,61 @@
     "artist": "JOHAN x Goddamn",
     "audio": "uploads/media/JOHAN_x_Goddamn_-_Slowmotion.mp3",
     "cover": "https://avatars.yandex.net/get-music-content/5502420/c092875b.a.24380375-1/m1000x1000?webp=false"
+  },
+  {
+    "id": 348291,
+    "title": "River",
+    "artist": "Anonymouz",
+    "audio": "uploads/media/Anonymouz_-_River__VINLAND_SAGA_SEASON_2_OP.mp3",
+    "cover": "https://images.genius.com/512bb23b64d6cf045e3721688ae1943f.1000x1000x1.jpg"
+  },
+  {
+    "id": 548170,
+    "title": "Prove",
+    "artist": "One Ok Rock",
+    "audio": "uploads/media/One_Ok_Rock_-_Prove_Official_Audio.mp3",
+    "cover": "https://avatars.yandex.net/get-music-content/6201394/c980ddcf.a.23430934-1/m1000x1000?webp=false"
+  },
+  {
+    "id": 612840,
+    "title": "Outta Sight",
+    "artist": "One Ok Rock",
+    "audio": "uploads/media/One_Ok_Rock_-_Outta_Sight_Official_Audio.mp3",
+    "cover": "https://lastfm.freetls.fastly.net/i/u/ar0/d720deebec038c7dae1d9f72d72a6eb2.jpg"
+  },
+  {
+    "id": 333702,
+    "title": "Mukanjyo",
+    "artist": "Survive Said The Prophet",
+    "audio": "uploads/media/Survive_Said_The_Prophet_-_Mukanjyo.mp3",
+    "cover": "https://i.ytimg.com/vi/ZQE6aj5DhYk/maxresdefault.jpg"
+  },
+  {
+    "id": 942311,
+    "title": "Kiminosei",
+    "artist": "the perggies",
+    "audio": "uploads/media/the_pergies_-_Kiminosei.mp3",
+    "cover": "https://i.ytimg.com/vi/KbT3JsJmd14/maxresdefault.jpg"
+  },
+  {
+    "id": 910766,
+    "title": "My Hero",
+    "artist": "MAN WITH A MISSION",
+    "audio": "uploads/media/Inuyashiki_OpeningFULL_My_Hero_-_MAN_WITH_A_MISSION.mp3",
+    "cover": "https://lastfm.freetls.fastly.net/i/u/ar0/eafb171e2d852ef06313555705fd594e.jpg"
+  },
+  {
+    "id": 197571,
+    "title": "Abyss",
+    "artist": "YUNGBLUD",
+    "audio": "uploads/media/YUNGBLUD_-_Abyss.mp3",
+    "cover": "https://avatars.yandex.net/get-music-content/6386858/17e75da3.a.30447850-2/m1000x1000?webp=false"
+  },
+  {
+    "id": 123760,
+    "title": "Brave Shine",
+    "artist": "Aimer",
+    "audio": "uploads/media/Aimer_-_Brave_Shine.mp3",
+    "cover": "https://avatars.yandex.net/get-music-content/2359742/7c05cda6.a.10987377-1/m1000x1000?webp=false"
   }
 ]
