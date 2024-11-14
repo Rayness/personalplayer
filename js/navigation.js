@@ -1,4 +1,4 @@
-import { getSongs, renderSongs } from './tracks.js';
+import { getSongs } from './tracks.js';
 import { AddNewSongs } from './upload.js';
 import { startVisualizer } from './visualizer.js';
 
@@ -11,6 +11,7 @@ export const loadTracksPage = async () => {
         document.getElementById("content").innerHTML = html;
         await getSongs();  // Загружаем и отображаем треки
         console.log("Страница треков загружена");
+
     } catch (error) {
         console.error("Ошибка загрузки страницы треков:", error);
     }
@@ -37,7 +38,7 @@ export const loadVisualizerPage = async () => {
 // Загружаем страницу добавления треков
 export const loadAddSongsPage = async () => {
     try {
-        const response = await fetch("add-songs.html");
+        const response = await fetch("pages/add-songs.html");
         if (!response.ok) throw new Error(`Ошибка: ${response.status}`);
         const html = await response.text();
         document.getElementById("content").innerHTML = html;

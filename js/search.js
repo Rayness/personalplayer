@@ -1,5 +1,5 @@
 // Функция для фильтрации песен по запросу
-const searchSongs = (query) => {
+export const searchSongs = (songs ,query) => {
     const filteredSongs = songs.filter(song =>
         song.name.toLowerCase().includes(query.toLowerCase()) ||
         song.artist.toLowerCase().includes(query.toLowerCase())
