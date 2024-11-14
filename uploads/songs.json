@@ -502,5 +502,26 @@
     "artist": "Aimer",
     "audio": "uploads/media/Aimer_-_Brave_Shine.mp3",
     "cover": "https://avatars.yandex.net/get-music-content/2359742/7c05cda6.a.10987377-1/m1000x1000?webp=false"
+  },
+  {
+    "id": 204269,
+    "title": "Gira Gira (ギラギラ)",
+    "artist": "Ado",
+    "audio": "uploads/media/Ado_Gira_Gira_.mp3",
+    "cover": "https://i.ytimg.com/vi/nSZ36z3_10g/maxresdefault.jpg"
+  },
+  {
+    "id": 908633,
+    "title": "Backlight (逆光)",
+    "artist": "Ado",
+    "audio": "uploads/media/Ado_-_Backlight.mp3",
+    "cover": "https://images.genius.com/fd8b5c7f2a03083abe5734ff76509067.1000x1000x1.png"
+  },
+  {
+    "id": 952950,
+    "title": "Tot Musica",
+    "artist": "Ado",
+    "audio": "uploads/media/Uta_Tot_Musica_AMVMADOne_Piece_Red.mp3",
+    "cover": "https://images.genius.com/8daaaa0c73899597c9ff7e0e66b84f13.1000x1000x1.png"
   }
 ]

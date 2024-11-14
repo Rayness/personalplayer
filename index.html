@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Мой музыкальный плеер</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header class="header">
         <h2>Personal Music</h2>
         <nav class="menu">
-            <a href="#" class="nav-link" onclick="loadHomePage()">Главная</a>
-            <a href="tracks.html" class="nav-link-tracks">Каталог</a>
-            <a href="visualizer.html" class="nav-link-visualizer">Визуализатор</a>
-            <a href="add-songs.html" class="nav-link-add-songs">Добавление песен</a>
+            <a href="#" class="nav-link-menu">Главная</a>
+            <a href="#" class="nav-link-tracks">Каталог</a>
+            <a href="#" class="nav-link-visualizer">Визуализатор</a>
+            <a href="#" class="nav-link-add-songs">Добавление песен</a>
         </nav>
     </header>
 
@@ -38,9 +38,9 @@
         <!-- Кнопки управления -->
         <div class="player__control">
           <button id="shuffle" onclick="btnShuffle()" class="sub__button"><i class="fa-solid fa-shuffle"></i></button>
-          <button id="prev" onclick="playPreviousSong()"><i class="fa-solid fa-backward"></i></button>
-          <button id="play-pause" onclick="togglePlayPause()"><i class="fa-solid fa-play"></i></button>
-          <button id="next" onclick="playNextSong()"><i class="fa-solid fa-forward"></i></button>
+          <button id="prev"><i class="fa-solid fa-backward"></i></button>
+          <button id="play-pause"><i class="fa-solid fa-play"></i></button>
+          <button id="next"><i class="fa-solid fa-forward"></i></button>
           <button id="repeat" onclick="btnRepeat()" class="sub__button"><i class="fa-solid fa-repeat"></i></button>
         </div>
         
@@ -60,8 +60,7 @@
           </div>
       </div>
     </div>
-  
 
-  <script src="app.js" defer></script>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>
