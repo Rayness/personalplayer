@@ -18,7 +18,7 @@ export const loadTracksPage = async () => {
         const searchInput = document.getElementById("searchInput");
         if (searchInput) {
             searchInput.addEventListener("input", (event) => {
-                addEventListener("timeupdate", searchSongs(event.target.value));
+                searchSongs(event.target.value);
             });
         }
     } catch (error) {

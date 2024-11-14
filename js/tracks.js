@@ -5,11 +5,15 @@ let filteredSongs = []; // Отфильтрованный список трек�
 
 export const getSongs = async () => {
     try {
-        const response = await fetch("../uploads/songs.json");
-        songs = await response.json();
-        filteredSongs = songs;
-        renderSongs(filteredSongs)
-        initializePlayer(songs)
+        if (songs.length === 0) {
+            const response = await fetch("../uploads/songs.json");
+            songs = await response.json();
+            filteredSongs = songs;
+            renderSongs(filteredSongs)
+            initializePlayer(filteredSongs)
+        } else {
+            renderSongs(filteredSongs);
+        }   
     } catch (error) {
         console.error("Ошибка загрузки песен:", error);
     }
