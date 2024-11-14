@@ -1,10 +1,14 @@
 import { playSong, initializePlayer } from './player.js';
 
+let songs = [];        // Полный список треков
+let filteredSongs = []; // Отфильтрованный список треков (на основе поиска)
+
 export const getSongs = async () => {
     try {
         const response = await fetch("../uploads/songs.json");
-        const songs = await response.json();
-        renderSongs(songs)
+        songs = await response.json();
+        filteredSongs = songs;
+        renderSongs(filteredSongs)
         initializePlayer(songs)
     } catch (error) {
         console.error("Ошибка загрузки песен:", error);
@@ -28,4 +32,14 @@ export const renderSongs = (songs) => {
             playSong(songs[index]);
         });
     });
+};
+
+// Функция для фильтрации треков на основе поискового запроса
+export const searchSongs = (query) => {
+    query = query.toLowerCase();
+    filteredSongs = songs.filter(song =>
+        song.title.toLowerCase().includes(query) ||
+        song.artist.toLowerCase().includes(query)
+    );
+    renderSongs(filteredSongs); // Перерисовываем список на основе результатов поиска
 };

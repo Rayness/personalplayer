@@ -1,4 +1,4 @@
-import { getSongs } from './tracks.js';
+import { getSongs, searchSongs } from './tracks.js';
 import { AddNewSongs } from './upload.js';
 import { startVisualizer } from './visualizer.js';
 
@@ -9,9 +9,18 @@ export const loadTracksPage = async () => {
         if (!response.ok) throw new Error(`Ошибка: ${response.status}`);
         const html = await response.text();
         document.getElementById("content").innerHTML = html;
-        await getSongs();  // Загружаем и отображаем треки
+        
+        // Загружаем и отображаем треки
+        await getSongs();  
         console.log("Страница треков загружена");
 
+        // Привязываем обработчик для поиска после загрузки track.html
+        const searchInput = document.getElementById("searchInput");
+        if (searchInput) {
+            searchInput.addEventListener("input", (event) => {
+                addEventListener("timeupdate", searchSongs(event.target.value));
+            });
+        }
     } catch (error) {
         console.error("Ошибка загрузки страницы треков:", error);
     }

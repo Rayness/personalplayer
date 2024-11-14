@@ -37,6 +37,12 @@ export const updatePlayerInfo = (song) => {
     myAudio.src = song.audio;
 };
 
+const autoPlay = (currentTime,duration) => {
+    if (currentTime === duration) {
+        playSong(songs[currentSongIndex]);
+    }
+}
+
 // Сохранение состояния плеера в localStorage
 const savePlayerState = () => {
     const state = {
@@ -75,7 +81,6 @@ export const togglePlayPause = () => {
 export const playNextSong = () => {
     currentSongIndex = (currentSongIndex) % songs.length;
     console.log('Текущий индекс песни в playsong', currentSongIndex);
-    
     playSong(songs[currentSongIndex]);
 };
 
@@ -90,7 +95,7 @@ myAudio.addEventListener("timeupdate", () => {
     const duration = myAudio.duration;
     const progress = (currentTime / duration) * 100;
     updateBackground(rangeInput);
-
+    autoPlay(currentTime, duration);
     document.getElementById("progressSlider").value = progress;
     document.getElementById("currentTime").textContent = formatTime(currentTime);
     document.getElementById("totalTime").textContent = formatTime(duration);

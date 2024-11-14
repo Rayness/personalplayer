@@ -47,14 +47,14 @@ body {
 #content {
     margin: auto;
     width: 100%;
-    max-width: 40vw;
+    max-width: 800px;
 }
 
 /* Стиль для списка треков */
 .songsWrapper {
     width: 100%;
     margin: 20px 0;
-    margin-bottom: 10vh;
+    margin-bottom: 130px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -292,6 +292,7 @@ body {
 
 .search {
     width: 100%; /* Растягиваем input на всю ширину контейнера */
+    height: 30px;
     box-sizing: border-box; /* Учитываем отступы и границы в ширину */
     border-radius: 4px; /* Закругленные углы */
     padding: 4px;
