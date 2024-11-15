@@ -1,4 +1,4 @@
-import { playSong, initializePlayer } from './player.js';
+import { playSong, initializePlayer, getIndex } from './player.js';
 
 let songs = [];        // Полный список треков
 let filteredSongs = []; // Отфильтрованный список треков (на основе поиска)
@@ -22,7 +22,7 @@ export const getSongs = async () => {
 export const renderSongs = (songs) => {
     const wrapper = document.getElementById("songsWrapper");
     wrapper.innerHTML = songs.map((song, index) => `
-        <div class="song" data-index="${index}">
+        <div class="song" id="${index}" data-index="${index}">
             <img src="${song.cover}" alt="cover">
             <div>
                 <h3>${song.title}</h3>
@@ -33,6 +33,9 @@ export const renderSongs = (songs) => {
 
     document.querySelectorAll(".song").forEach((songElement, index) => {
         songElement.addEventListener("click", () => {
+            getIndex(index)
+            console.log('индекс', index);
+            
             playSong(songs[index]);
         });
     });
@@ -45,5 +48,6 @@ export const searchSongs = (query) => {
         song.title.toLowerCase().includes(query) ||
         song.artist.toLowerCase().includes(query)
     );
+    initializePlayer(filteredSongs);
     renderSongs(filteredSongs); // Перерисовываем список на основе результатов поиска
 };

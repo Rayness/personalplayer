@@ -15,7 +15,7 @@ export const initializePlayer = (loadedSongs) => {
         currentSongIndex = savedState.currentSongIndex;
         myAudio.currentTime = savedState.currentTime || 0;
         updateBackground(rangeInput);
-        updatePlayerInfo(songs[currentSongIndex - 1]);
+        updatePlayerInfo(songs[currentSongIndex]);
         isPlaying = savedState.isPlaying;
         if (isPlaying) {
             document.getElementById("play-pause").innerHTML = `<i class="fa-solid fa-pause">`;
@@ -24,10 +24,10 @@ export const initializePlayer = (loadedSongs) => {
     } else {
         updatePlayerInfo(songs[currentSongIndex]);
     }
-    console.log('Вот он - localeStorage',savedState);
     
     myAudio.volume = localStorage.getItem('volume') || 0.5;
     savePlayerState(); // Сохраняем начальное состояние
+    console.log('Вот он - localeStorage',savedState, localStorage.getItem('volume'));
 };
 
 export const updatePlayerInfo = (song) => {
@@ -39,6 +39,7 @@ export const updatePlayerInfo = (song) => {
 
 const autoPlay = (currentTime,duration) => {
     if (currentTime === duration) {
+        currentSongIndex = currentSongIndex + 1;
         playSong(songs[currentSongIndex]);
     }
 }
@@ -52,7 +53,6 @@ const savePlayerState = () => {
     };
     localStorage.setItem("playerState", JSON.stringify(state));
     console.log("Сохранение в localestorage сработало", state);
-    
 };
 
 // Добавляем обработчики событий для сохранения состояния
@@ -60,8 +60,12 @@ myAudio.addEventListener("timeupdate", savePlayerState);
 myAudio.addEventListener("pause", savePlayerState);
 myAudio.addEventListener("play", savePlayerState);
 
+export const getIndex = (index) => {
+    currentSongIndex = index;
+    console.log('Получение индекса',index, currentSongIndex);
+}
+
 export const playSong = (song) => {
-    currentSongIndex = song.id;
     console.log('Инфа о песне', song);
     document.getElementById("play-pause").innerHTML = `<i class="fa-solid fa-pause">`;
     updatePlayerInfo(song);
@@ -79,13 +83,13 @@ export const togglePlayPause = () => {
 };
 
 export const playNextSong = () => {
-    currentSongIndex = (currentSongIndex) % songs.length;
+    currentSongIndex = (currentSongIndex + 1) % songs.length;
     console.log('Текущий индекс песни в playsong', currentSongIndex);
     playSong(songs[currentSongIndex]);
 };
 
 export const playPreviousSong = () => {
-    currentSongIndex = (currentSongIndex - 2 + songs.length) % songs.length;
+    currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
     playSong(songs[currentSongIndex]);
 };
 
@@ -111,4 +115,6 @@ document.getElementById("progressSlider").addEventListener("input", (event) => {
 document.getElementById("volumeSlider").addEventListener("input", (event) => {
     myAudio.volume = event.target.value;
     localStorage.setItem('volume', myAudio.volume);
+    console.log('ГРОМКОСТЬ после двигания', localStorage.getItem('volume'));
+    
 });
