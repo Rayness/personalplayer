@@ -1,0 +1,16 @@
+<div class="peers-card glass">
+  <h2>Подключённые узлы</h2>
+  <ul class="peers-list" id="peersList"></ul>
+
+  <div class="peers-add">
+    <h3>Добавить узел</h3>
+    <form id="addPeerForm" class="form-group">
+      <div style="display:flex;gap:8px;">
+        <input class="form-input" type="url" id="peerUrl"  placeholder="http://friend-server:3000" required>
+        <input class="form-input" type="text" id="peerName" placeholder="Название (необязательно)" style="max-width:200px">
+      </div>
+      <button class="btn-submit" type="submit">Добавить</button>
+    </form>
+    <p id="peerMessage" class="upload-message"></p>
+  </div>
+</div>

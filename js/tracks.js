@@ -34,8 +34,6 @@ export const renderSongs = (songs) => {
     document.querySelectorAll(".song").forEach((songElement, index) => {
         songElement.addEventListener("click", () => {
             getIndex(index)
-            console.log('индекс', index);
-            
             playSong(songs[index]);
         });
     });

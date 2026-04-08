@@ -1,3 +1,4 @@
 {
-    "workbench.editor.decorations.colors": true
+    "workbench.editor.decorations.colors": true,
+    "liveServer.settings.port": 5501
 }

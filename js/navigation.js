@@ -29,7 +29,7 @@ export const loadTracksPage = async () => {
 // Загружаем страницу визуализатора
 export const loadVisualizerPage = async () => {
     try {
-        const response = await fetch("visualizer.html");
+        const response = await fetch("pages/visualizer.html");
         if (!response.ok) throw new Error(`Ошибка: ${response.status}`);
         const html = await response.text();
         document.getElementById("content").innerHTML = html;

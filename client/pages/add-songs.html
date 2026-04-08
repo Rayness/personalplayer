@@ -1,0 +1,15 @@
+<div class="upload-card glass">
+  <h2>Добавить трек</h2>
+  <form id="uploadForm" class="form-group">
+    <input class="form-input" type="text" id="artist" placeholder="Исполнитель" required>
+    <input class="form-input" type="text" id="title"  placeholder="Название трека" required>
+    <input class="form-input" type="text" id="cover"  placeholder="URL обложки (необязательно)">
+    <label class="file-label">
+      <i class="fa-solid fa-upload"></i>
+      <span id="fileName">Выберите аудиофайл</span>
+      <input type="file" id="audio" accept="audio/*" required>
+    </label>
+    <button class="btn-submit" type="submit">Загрузить</button>
+  </form>
+  <p id="uploadMessage" class="upload-message"></p>
+</div>

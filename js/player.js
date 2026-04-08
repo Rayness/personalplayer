@@ -39,7 +39,12 @@ export const updatePlayerInfo = (song) => {
 
 const autoPlay = (currentTime,duration) => {
     if (currentTime === duration) {
-        currentSongIndex = currentSongIndex + 1;
+        document.getElementById("play-pause").innerHTML = `<i class="fa-solid fa-play">`;
+        if (currentSongIndex != songs.length - 1) {
+            currentSongIndex = currentSongIndex + 1;
+        } else {
+            currentSongIndex = 0;
+        }
         playSong(songs[currentSongIndex]);
     }
 }
